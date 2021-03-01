@@ -15,6 +15,9 @@
 		0C1B541325ED7D3500625783 /* TongoNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B541225ED7D3500625783 /* TongoNewsUITests.swift */; };
 		0C1B543B25ED80BD00625783 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B543A25ED80BD00625783 /* ApplicationCoordinator.swift */; };
 		0C1B545D25ED83FD00625783 /* ApplicationCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B545C25ED83FD00625783 /* ApplicationCoordinatorTests.swift */; };
+		0C1B546E25ED928A00625783 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B546D25ED928A00625783 /* AuthCoordinator.swift */; };
+		0C1B547E25ED951700625783 /* MockAuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B547D25ED951700625783 /* MockAuthCoordinator.swift */; };
+		0C1B548625ED95C900625783 /* MockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B548525ED95C900625783 /* MockViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		0C1B541425ED7D3500625783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C1B543A25ED80BD00625783 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		0C1B545C25ED83FD00625783 /* ApplicationCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinatorTests.swift; sourceTree = "<group>"; };
+		0C1B546D25ED928A00625783 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		0C1B547D25ED951700625783 /* MockAuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthCoordinator.swift; sourceTree = "<group>"; };
+		0C1B548525ED95C900625783 /* MockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		0C1B53EC25ED7D3400625783 /* TongoNews */ = {
 			isa = PBXGroup;
 			children = (
+				0C1B546C25ED927600625783 /* Auth */,
 				0C1B543925ED80B000625783 /* Application */,
 				0C1B53ED25ED7D3400625783 /* AppDelegate.swift */,
 				0C1B53EF25ED7D3400625783 /* SceneDelegate.swift */,
@@ -113,8 +120,9 @@
 		0C1B540625ED7D3500625783 /* TongoNewsTests */ = {
 			isa = PBXGroup;
 			children = (
-				0C1B540925ED7D3500625783 /* Info.plist */,
+				0C1B547C25ED950700625783 /* Mocks */,
 				0C1B545C25ED83FD00625783 /* ApplicationCoordinatorTests.swift */,
+				0C1B540925ED7D3500625783 /* Info.plist */,
 			);
 			path = TongoNewsTests;
 			sourceTree = "<group>";
@@ -134,6 +142,23 @@
 				0C1B543A25ED80BD00625783 /* ApplicationCoordinator.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		0C1B546C25ED927600625783 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				0C1B546D25ED928A00625783 /* AuthCoordinator.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		0C1B547C25ED950700625783 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				0C1B547D25ED951700625783 /* MockAuthCoordinator.swift */,
+				0C1B548525ED95C900625783 /* MockViewController.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C1B546E25ED928A00625783 /* AuthCoordinator.swift in Sources */,
 				0C1B543B25ED80BD00625783 /* ApplicationCoordinator.swift in Sources */,
 				0C1B53EE25ED7D3400625783 /* AppDelegate.swift in Sources */,
 				0C1B53F825ED7D3400625783 /* TongoNews.xcdatamodeld in Sources */,
@@ -276,6 +302,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C1B548625ED95C900625783 /* MockViewController.swift in Sources */,
+				0C1B547E25ED951700625783 /* MockAuthCoordinator.swift in Sources */,
 				0C1B545D25ED83FD00625783 /* ApplicationCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
