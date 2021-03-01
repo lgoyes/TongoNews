@@ -9,13 +9,12 @@
 /* Begin PBXBuildFile section */
 		0C1B53EE25ED7D3400625783 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B53ED25ED7D3400625783 /* AppDelegate.swift */; };
 		0C1B53F025ED7D3400625783 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B53EF25ED7D3400625783 /* SceneDelegate.swift */; };
-		0C1B53F225ED7D3400625783 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B53F125ED7D3400625783 /* ViewController.swift */; };
-		0C1B53F525ED7D3400625783 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C1B53F325ED7D3400625783 /* Main.storyboard */; };
 		0C1B53F825ED7D3400625783 /* TongoNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B53F625ED7D3400625783 /* TongoNews.xcdatamodeld */; };
 		0C1B53FA25ED7D3500625783 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C1B53F925ED7D3500625783 /* Assets.xcassets */; };
 		0C1B53FD25ED7D3500625783 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C1B53FB25ED7D3500625783 /* LaunchScreen.storyboard */; };
-		0C1B540825ED7D3500625783 /* TongoNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B540725ED7D3500625783 /* TongoNewsTests.swift */; };
 		0C1B541325ED7D3500625783 /* TongoNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B541225ED7D3500625783 /* TongoNewsUITests.swift */; };
+		0C1B543B25ED80BD00625783 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B543A25ED80BD00625783 /* ApplicationCoordinator.swift */; };
+		0C1B545D25ED83FD00625783 /* ApplicationCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B545C25ED83FD00625783 /* ApplicationCoordinatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,18 +38,17 @@
 		0C1B53EA25ED7D3400625783 /* TongoNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TongoNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C1B53ED25ED7D3400625783 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C1B53EF25ED7D3400625783 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0C1B53F125ED7D3400625783 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0C1B53F425ED7D3400625783 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C1B53F725ED7D3400625783 /* TongoNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TongoNews.xcdatamodel; sourceTree = "<group>"; };
 		0C1B53F925ED7D3500625783 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C1B53FC25ED7D3500625783 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C1B53FE25ED7D3500625783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C1B540325ED7D3500625783 /* TongoNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TongoNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C1B540725ED7D3500625783 /* TongoNewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TongoNewsTests.swift; sourceTree = "<group>"; };
 		0C1B540925ED7D3500625783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C1B540E25ED7D3500625783 /* TongoNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TongoNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C1B541225ED7D3500625783 /* TongoNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TongoNewsUITests.swift; sourceTree = "<group>"; };
 		0C1B541425ED7D3500625783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C1B543A25ED80BD00625783 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		0C1B545C25ED83FD00625783 /* ApplicationCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +99,9 @@
 		0C1B53EC25ED7D3400625783 /* TongoNews */ = {
 			isa = PBXGroup;
 			children = (
+				0C1B543925ED80B000625783 /* Application */,
 				0C1B53ED25ED7D3400625783 /* AppDelegate.swift */,
 				0C1B53EF25ED7D3400625783 /* SceneDelegate.swift */,
-				0C1B53F125ED7D3400625783 /* ViewController.swift */,
-				0C1B53F325ED7D3400625783 /* Main.storyboard */,
 				0C1B53F925ED7D3500625783 /* Assets.xcassets */,
 				0C1B53FB25ED7D3500625783 /* LaunchScreen.storyboard */,
 				0C1B53FE25ED7D3500625783 /* Info.plist */,
@@ -116,8 +113,8 @@
 		0C1B540625ED7D3500625783 /* TongoNewsTests */ = {
 			isa = PBXGroup;
 			children = (
-				0C1B540725ED7D3500625783 /* TongoNewsTests.swift */,
 				0C1B540925ED7D3500625783 /* Info.plist */,
+				0C1B545C25ED83FD00625783 /* ApplicationCoordinatorTests.swift */,
 			);
 			path = TongoNewsTests;
 			sourceTree = "<group>";
@@ -129,6 +126,14 @@
 				0C1B541425ED7D3500625783 /* Info.plist */,
 			);
 			path = TongoNewsUITests;
+			sourceTree = "<group>";
+		};
+		0C1B543925ED80B000625783 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				0C1B543A25ED80BD00625783 /* ApplicationCoordinator.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +241,6 @@
 			files = (
 				0C1B53FD25ED7D3500625783 /* LaunchScreen.storyboard in Resources */,
 				0C1B53FA25ED7D3500625783 /* Assets.xcassets in Resources */,
-				0C1B53F525ED7D3400625783 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C1B53F225ED7D3400625783 /* ViewController.swift in Sources */,
+				0C1B543B25ED80BD00625783 /* ApplicationCoordinator.swift in Sources */,
 				0C1B53EE25ED7D3400625783 /* AppDelegate.swift in Sources */,
 				0C1B53F825ED7D3400625783 /* TongoNews.xcdatamodeld in Sources */,
 				0C1B53F025ED7D3400625783 /* SceneDelegate.swift in Sources */,
@@ -272,7 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C1B540825ED7D3500625783 /* TongoNewsTests.swift in Sources */,
+				0C1B545D25ED83FD00625783 /* ApplicationCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,14 +304,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0C1B53F325ED7D3400625783 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0C1B53F425ED7D3400625783 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0C1B53FB25ED7D3500625783 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
