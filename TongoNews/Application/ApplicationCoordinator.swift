@@ -7,33 +7,27 @@
 
 import UIKit
 
-protocol CoordinatorType: AnyObject {
-    func asRoutable() -> UIViewController
-    func start() throws
-}
-
 protocol ApplicationCoordinatorType: CoordinatorType {
     
 }
 
 final class ApplicationCoordinator: ApplicationCoordinatorType {
     
-    enum FlowType: String {
+    enum FlowType {
         case auth
     }
     
     var selectedFlow: FlowType
     let navigationController: UINavigationController
-    
     var flowManager: [FlowType: CoordinatorType]
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         selectedFlow = .auth
-        flowManager = [FlowType.auth: AuthCoordinator()]
+        flowManager = [FlowType.auth: AuthCoordinator(navigationController: navigationController)]
     }
     
-    func asRoutable() -> UIViewController {
+    func getRoutable() -> UIViewController {
         return navigationController
     }
     
@@ -41,8 +35,7 @@ final class ApplicationCoordinator: ApplicationCoordinatorType {
         guard let coordinator = flowManager[selectedFlow] else {
             throw ApplicationCoordinatorError.noCoordinatorWasAssociatedToFlowType
         }
-        let currentViewController = coordinator.asRoutable()
-        navigationController.pushViewController(currentViewController, animated: true)
+        try coordinator.start()
     }
     
     func setFlow(flowType: FlowType, coordinator: CoordinatorType) {

@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         let appWindow = UIWindow(windowScene: windowScene)
-        appWindow.rootViewController = applicationCoordinator.asRoutable()
+        appWindow.rootViewController = applicationCoordinator.getRoutable()
         appWindow.makeKeyAndVisible()
         
         self.window = appWindow

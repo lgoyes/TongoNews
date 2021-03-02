@@ -25,7 +25,7 @@ class ApplicationCoordinatorTests: XCTestCase {
     func test_GivenANavigationControllerWasInjected_WhenAsRoutableIsInvoked_ThenReturnTheInjectedNavigationController() {
         let navigationController = UINavigationController()
         sut = ApplicationCoordinator(navigationController: navigationController)
-        let presentedViewController = sut.asRoutable()
+        let presentedViewController = sut.getRoutable()
         XCTAssertEqual(presentedViewController, navigationController)
     }
     
@@ -51,15 +51,18 @@ class ApplicationCoordinatorTests: XCTestCase {
         XCTAssertTrue(selectedFlow === mockAuthCoordinator)
     }
     
-    func test_GivenAMockedVersionOfTheAuthCoordinator_WhenStartIsInvoked_ThenPushTheMockViewController() throws {
+    func test_GivenAMockedVersionOfTheAuthCoordinator_WhenStartIsInvoked_ThenAuthCoordinatorStartFunctionShouldBeInvoked() throws {
         let sutImplementation = sut as! ApplicationCoordinator
+        let expectation = XCTestExpectation(description: "Start method is called on auth coordinator")
         let mockAuthCoordinator = MockAuthCoordinator()
+        mockAuthCoordinator.onStart = {
+            expectation.fulfill()
+        }
         sutImplementation.setFlow(flowType: .auth, coordinator: mockAuthCoordinator)
         
         try sut.start()
-        
-        let currentViewController = sutImplementation.navigationController.viewControllers.first
-        XCTAssertTrue(currentViewController === mockAuthCoordinator.currentViewController)
+         
+        wait(for: [expectation], timeout: 0.1)
     }
     
     func test_GivenThatNoCoordinatorIsAssignedToTheAuthFlow_WhenStartIsInvoked_ThenShouldThrowError() {

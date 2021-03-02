@@ -9,16 +9,17 @@ import UIKit
 @testable import TongoNews
 
 final class MockAuthCoordinator: AuthCoordinatorType {
-    
     lazy var currentViewController: UIViewController = {
         return MockViewController()
     }()
     
-    func asRoutable() -> UIViewController {
+    var onStart: (() -> ())?
+    
+    func getRoutable() -> UIViewController {
         return currentViewController
     }
     
     func start() {
-        
+        onStart?()
     }
 }

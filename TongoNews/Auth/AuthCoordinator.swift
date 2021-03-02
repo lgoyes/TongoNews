@@ -12,8 +12,23 @@ protocol AuthCoordinatorType: CoordinatorType {
 }
 
 final class AuthCoordinator: AuthCoordinatorType {
-    func asRoutable() -> UIViewController {
-        return UIViewController()
+    
+    enum Node {
+        case login
+    }
+    
+    var selectedNode: Node
+    var nodeManager: [Node: Routable]
+    
+    let navigationController: UINavigationController
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+        self.selectedNode = .login
+        nodeManager = [:]
+    }
+    
+    func getRoutable() -> UIViewController {
+        return navigationController
     }
     
     func start() {

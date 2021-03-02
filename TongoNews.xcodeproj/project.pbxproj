@@ -18,6 +18,10 @@
 		0C1B546E25ED928A00625783 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B546D25ED928A00625783 /* AuthCoordinator.swift */; };
 		0C1B547E25ED951700625783 /* MockAuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B547D25ED951700625783 /* MockAuthCoordinator.swift */; };
 		0C1B548625ED95C900625783 /* MockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B548525ED95C900625783 /* MockViewController.swift */; };
+		0C5F0A6B25EE93F100D4AC8A /* AuthCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0A6A25EE93F100D4AC8A /* AuthCoordinatorTests.swift */; };
+		0C5F0A7225EE9D8000D4AC8A /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0A7125EE9D8000D4AC8A /* Routable.swift */; };
+		0C5F0A7B25EE9D9C00D4AC8A /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0A7A25EE9D9C00D4AC8A /* CoordinatorType.swift */; };
+		0C5F0A8325EE9DF400D4AC8A /* UIViewController+Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0A8225EE9DF400D4AC8A /* UIViewController+Routable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		0C1B546D25ED928A00625783 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		0C1B547D25ED951700625783 /* MockAuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthCoordinator.swift; sourceTree = "<group>"; };
 		0C1B548525ED95C900625783 /* MockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
+		0C5F0A6A25EE93F100D4AC8A /* AuthCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinatorTests.swift; sourceTree = "<group>"; };
+		0C5F0A7125EE9D8000D4AC8A /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
+		0C5F0A7A25EE9D9C00D4AC8A /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
+		0C5F0A8225EE9DF400D4AC8A /* UIViewController+Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Routable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +113,7 @@
 		0C1B53EC25ED7D3400625783 /* TongoNews */ = {
 			isa = PBXGroup;
 			children = (
+				0C5F0A6F25EE9D6600D4AC8A /* BaseArchitecture */,
 				0C1B546C25ED927600625783 /* Auth */,
 				0C1B543925ED80B000625783 /* Application */,
 				0C1B53ED25ED7D3400625783 /* AppDelegate.swift */,
@@ -123,6 +132,7 @@
 				0C1B547C25ED950700625783 /* Mocks */,
 				0C1B545C25ED83FD00625783 /* ApplicationCoordinatorTests.swift */,
 				0C1B540925ED7D3500625783 /* Info.plist */,
+				0C5F0A6A25EE93F100D4AC8A /* AuthCoordinatorTests.swift */,
 			);
 			path = TongoNewsTests;
 			sourceTree = "<group>";
@@ -155,10 +165,44 @@
 		0C1B547C25ED950700625783 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				0C1B547D25ED951700625783 /* MockAuthCoordinator.swift */,
 				0C1B548525ED95C900625783 /* MockViewController.swift */,
+				0C5F0A5D25EE93C700D4AC8A /* Auth */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		0C5F0A5D25EE93C700D4AC8A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				0C1B547D25ED951700625783 /* MockAuthCoordinator.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		0C5F0A6F25EE9D6600D4AC8A /* BaseArchitecture */ = {
+			isa = PBXGroup;
+			children = (
+				0C5F0A7925EE9D9300D4AC8A /* Coordinator */,
+				0C5F0A7025EE9D7500D4AC8A /* Routable */,
+			);
+			path = BaseArchitecture;
+			sourceTree = "<group>";
+		};
+		0C5F0A7025EE9D7500D4AC8A /* Routable */ = {
+			isa = PBXGroup;
+			children = (
+				0C5F0A7125EE9D8000D4AC8A /* Routable.swift */,
+				0C5F0A8225EE9DF400D4AC8A /* UIViewController+Routable.swift */,
+			);
+			path = Routable;
+			sourceTree = "<group>";
+		};
+		0C5F0A7925EE9D9300D4AC8A /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0C5F0A7A25EE9D9C00D4AC8A /* CoordinatorType.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,7 +334,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C5F0A8325EE9DF400D4AC8A /* UIViewController+Routable.swift in Sources */,
+				0C5F0A7B25EE9D9C00D4AC8A /* CoordinatorType.swift in Sources */,
 				0C1B546E25ED928A00625783 /* AuthCoordinator.swift in Sources */,
+				0C5F0A7225EE9D8000D4AC8A /* Routable.swift in Sources */,
 				0C1B543B25ED80BD00625783 /* ApplicationCoordinator.swift in Sources */,
 				0C1B53EE25ED7D3400625783 /* AppDelegate.swift in Sources */,
 				0C1B53F825ED7D3400625783 /* TongoNews.xcdatamodeld in Sources */,
@@ -304,6 +351,7 @@
 			files = (
 				0C1B548625ED95C900625783 /* MockViewController.swift in Sources */,
 				0C1B547E25ED951700625783 /* MockAuthCoordinator.swift in Sources */,
+				0C5F0A6B25EE93F100D4AC8A /* AuthCoordinatorTests.swift in Sources */,
 				0C1B545D25ED83FD00625783 /* ApplicationCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
