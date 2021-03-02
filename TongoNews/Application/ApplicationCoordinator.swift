@@ -13,18 +13,18 @@ protocol ApplicationCoordinatorType: CoordinatorType {
 
 final class ApplicationCoordinator: ApplicationCoordinatorType {
     
-    enum FlowType {
+    enum Node {
         case auth
     }
     
-    var selectedFlow: FlowType
+    var currentNode: Node
     let navigationController: UINavigationController
-    var flowManager: [FlowType: CoordinatorType]
+    var nodeManager: [Node: Routable]
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        selectedFlow = .auth
-        flowManager = [FlowType.auth: AuthCoordinator(navigationController: navigationController)]
+        currentNode = .auth
+        nodeManager = [.auth: AuthCoordinator(navigationController: navigationController)]
     }
     
     func getRoutable() -> UIViewController {
@@ -32,17 +32,19 @@ final class ApplicationCoordinator: ApplicationCoordinatorType {
     }
     
     func start() throws {
-        guard let coordinator = flowManager[selectedFlow] else {
-            throw ApplicationCoordinatorError.noCoordinatorWasAssociatedToFlowType
+        guard let node = nodeManager[currentNode] else {
+            throw CoordinatorError.nodeIsNotDefined
         }
-        try coordinator.start()
+        if let coordinator = node as? CoordinatorType {
+            try coordinator.start()
+        }
     }
     
-    func setFlow(flowType: FlowType, coordinator: CoordinatorType) {
-        flowManager[flowType] = coordinator
+    func setFlow(flowType: Node, coordinator: CoordinatorType) {
+        nodeManager[flowType] = coordinator
     }
 }
 
 enum ApplicationCoordinatorError: Error {
-    case noCoordinatorWasAssociatedToFlowType
+
 }

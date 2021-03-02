@@ -30,7 +30,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         do {
             try applicationCoordinator.start()
         } catch {
-            assertionFailure(error.localizedDescription)
+            #if DEBUG
+                if !isTestRunning() {
+                    assertionFailure(error.localizedDescription)
+                }
+            #endif
         }
+    }
+    
+    private func isTestRunning() -> Bool {
+        return ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
     }
 }

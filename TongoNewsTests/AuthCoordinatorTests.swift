@@ -31,7 +31,7 @@ class AuthCoordinatorTests: XCTestCase {
     
     func test_WhenInitialized_ThenTheSelectedNodeShouldBeLogin() {
         let sutImplementation = sut as! AuthCoordinator
-        let selectedFlow = sutImplementation.selectedNode
+        let selectedFlow = sutImplementation.currentNode
         XCTAssertEqual(selectedFlow, AuthCoordinator.Node.login)
     }
 }

@@ -17,13 +17,13 @@ final class AuthCoordinator: AuthCoordinatorType {
         case login
     }
     
-    var selectedNode: Node
+    var currentNode: Node
     var nodeManager: [Node: Routable]
     
     let navigationController: UINavigationController
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.selectedNode = .login
+        self.currentNode = .login
         nodeManager = [:]
     }
     
@@ -31,7 +31,11 @@ final class AuthCoordinator: AuthCoordinatorType {
         return navigationController
     }
     
-    func start() {
-        
+    func start() throws {
+        guard let node = nodeManager[currentNode] else {
+            throw CoordinatorError.nodeIsNotDefined
+        }
+        let routableNode = node.getRoutable()
+        self.navigationController.pushViewController(routableNode, animated: true)
     }
 }

@@ -22,6 +22,7 @@
 		0C5F0A7225EE9D8000D4AC8A /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0A7125EE9D8000D4AC8A /* Routable.swift */; };
 		0C5F0A7B25EE9D9C00D4AC8A /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0A7A25EE9D9C00D4AC8A /* CoordinatorType.swift */; };
 		0C5F0A8325EE9DF400D4AC8A /* UIViewController+Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0A8225EE9DF400D4AC8A /* UIViewController+Routable.swift */; };
+		0C5F0A9325EEA5A400D4AC8A /* CoordinatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0A9225EEA5A400D4AC8A /* CoordinatorError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		0C5F0A7125EE9D8000D4AC8A /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		0C5F0A7A25EE9D9C00D4AC8A /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
 		0C5F0A8225EE9DF400D4AC8A /* UIViewController+Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Routable.swift"; sourceTree = "<group>"; };
+		0C5F0A9225EEA5A400D4AC8A /* CoordinatorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				0C5F0A7A25EE9D9C00D4AC8A /* CoordinatorType.swift */,
+				0C5F0A9225EEA5A400D4AC8A /* CoordinatorError.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			files = (
 				0C5F0A8325EE9DF400D4AC8A /* UIViewController+Routable.swift in Sources */,
 				0C5F0A7B25EE9D9C00D4AC8A /* CoordinatorType.swift in Sources */,
+				0C5F0A9325EEA5A400D4AC8A /* CoordinatorError.swift in Sources */,
 				0C1B546E25ED928A00625783 /* AuthCoordinator.swift in Sources */,
 				0C5F0A7225EE9D8000D4AC8A /* Routable.swift in Sources */,
 				0C1B543B25ED80BD00625783 /* ApplicationCoordinator.swift in Sources */,
