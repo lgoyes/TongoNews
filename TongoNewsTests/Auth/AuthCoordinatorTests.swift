@@ -10,7 +10,7 @@ import XCTest
 
 class AuthCoordinatorTests: XCTestCase {
     
-    var sut: AnyCoordinator<AuthCoordinatorNode>!
+    var sut: AnyCoordinator<AuthCoordinator.Node>!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -48,11 +48,5 @@ class AuthCoordinatorTests: XCTestCase {
         
         let selectedNode = sutImplementation.nodeManager[.login]
         XCTAssertTrue(selectedNode === mockLoginController)
-    }
-    
-    func test_WhenSetNodeIsInvokedForANonAcceptedNode_ThenThrowAnError() {
-        let sutImplementation = sut as! AuthCoordinator
-        let mockAuthCoordinator = MockViewController()
-        XCTAssertThrowsError(try sutImplementation.setNode(node: ApplicationCoordinator.Node.auth, routable: mockAuthCoordinator))
     }
 }

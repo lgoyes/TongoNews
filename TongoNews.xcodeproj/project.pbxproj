@@ -23,7 +23,6 @@
 		0C5F0A7B25EE9D9C00D4AC8A /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0A7A25EE9D9C00D4AC8A /* CoordinatorType.swift */; };
 		0C5F0A8325EE9DF400D4AC8A /* UIViewController+Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0A8225EE9DF400D4AC8A /* UIViewController+Routable.swift */; };
 		0C5F0A9325EEA5A400D4AC8A /* CoordinatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0A9225EEA5A400D4AC8A /* CoordinatorError.swift */; };
-		0C94152325F04780001C06A4 /* RoutableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94152225F04780001C06A4 /* RoutableNode.swift */; };
 		0C94152825F054B6001C06A4 /* AnyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94152725F054B6001C06A4 /* AnyCoordinator.swift */; };
 		0CDFE63925F0428F00975A39 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDFE63825F0428F00975A39 /* LoginViewControllerTests.swift */; };
 		0CDFE64225F042D800975A39 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDFE64125F042D800975A39 /* LoginViewController.swift */; };
@@ -69,7 +68,6 @@
 		0C5F0A7A25EE9D9C00D4AC8A /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
 		0C5F0A8225EE9DF400D4AC8A /* UIViewController+Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Routable.swift"; sourceTree = "<group>"; };
 		0C5F0A9225EEA5A400D4AC8A /* CoordinatorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorError.swift; sourceTree = "<group>"; };
-		0C94152225F04780001C06A4 /* RoutableNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutableNode.swift; sourceTree = "<group>"; };
 		0C94152725F054B6001C06A4 /* AnyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCoordinator.swift; sourceTree = "<group>"; };
 		0CDFE63825F0428F00975A39 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		0CDFE64125F042D800975A39 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 			children = (
 				0C5F0A7125EE9D8000D4AC8A /* Routable.swift */,
 				0C5F0A8225EE9DF400D4AC8A /* UIViewController+Routable.swift */,
-				0C94152225F04780001C06A4 /* RoutableNode.swift */,
 			);
 			path = Routable;
 			sourceTree = "<group>";
@@ -383,7 +380,6 @@
 				0C1B53EE25ED7D3400625783 /* AppDelegate.swift in Sources */,
 				0C1B53F825ED7D3400625783 /* TongoNews.xcdatamodeld in Sources */,
 				0CDFE64225F042D800975A39 /* LoginViewController.swift in Sources */,
-				0C94152325F04780001C06A4 /* RoutableNode.swift in Sources */,
 				0C1B53F025ED7D3400625783 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

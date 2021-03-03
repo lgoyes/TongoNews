@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AnyCoordinator<AcceptedNode>: CoordinatorType where AcceptedNode: Hashable, AcceptedNode: RoutableNode {
+class AnyCoordinator<AcceptedNode>: CoordinatorType where AcceptedNode: Hashable {
     
     typealias Node = AcceptedNode
     
@@ -20,7 +20,15 @@ class AnyCoordinator<AcceptedNode>: CoordinatorType where AcceptedNode: Hashable
     }
     
     func start() throws {
-        assertionFailure("This method must be overriden")
+        guard let currentNode = self.currentNode, let node = nodeManager[currentNode] else {
+            throw CoordinatorError.nodeIsNotDefined
+        }
+        if let coordinator = node as? StartableCoordinator {
+            try coordinator.start()
+        } else {
+            let routableNode = node.getRoutable()
+            self.navigationController.pushViewController(routableNode, animated: true)
+        }
     }
     
     func setNode(node: AcceptedNode, routable: Routable) throws {

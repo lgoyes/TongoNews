@@ -7,34 +7,18 @@
 
 import UIKit
 
-protocol AuthCoordinatorType: CoordinatorType {
+protocol AuthCoordinatorType {
 
 }
 
-enum AuthCoordinatorNode: RoutableNode {
-    case login
-}
-
-final class AuthCoordinator: AnyCoordinator<AuthCoordinatorNode>, AuthCoordinatorType {
+final class AuthCoordinator: AnyCoordinator<AuthCoordinator.Node>, AuthCoordinatorType {
+    enum Node {
+        case login
+    }
     
     override init(navigationController: UINavigationController) {
         super.init(navigationController: navigationController)
         self.currentNode = .login
         nodeManager = [.login:LoginViewController()]
-    }
-    
-    override func start() throws {
-        guard let currentNode = self.currentNode, let node = nodeManager[currentNode] else {
-            throw CoordinatorError.nodeIsNotDefined
-        }
-        let routableNode = node.getRoutable()
-        self.navigationController.pushViewController(routableNode, animated: true)
-    }
-    
-    func setNode<T>(node: T, routable: Routable) throws where T : RoutableNode {
-        guard let acceptedNode = node as? Node else {
-            throw CoordinatorError.unableToSetRoutableNode
-        }
-        nodeManager[acceptedNode] = routable
     }
 }

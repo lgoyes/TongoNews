@@ -11,7 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
-    lazy var applicationCoordinator: AnyCoordinator<ApplicationCoordinatorNode> = {
+    lazy var applicationCoordinator: AnyCoordinator<ApplicationCoordinator.Node> = {
         let coordinator = ApplicationCoordinator(navigationController: UINavigationController())
         return coordinator
     }()
