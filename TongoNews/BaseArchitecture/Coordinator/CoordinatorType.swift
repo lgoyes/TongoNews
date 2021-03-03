@@ -6,6 +6,9 @@
 //
 
 protocol CoordinatorType: Routable {
+    associatedtype Node where Node: RoutableNode, Node: Hashable
+    var nodeManager: [Node: Routable] { get }
+    var currentNode: Node? { get }
     func start() throws
-    func setNode<T: RoutableNode>(node: T, routable: Routable) throws
+    func setNode(node: Node, routable: Routable) throws
 }

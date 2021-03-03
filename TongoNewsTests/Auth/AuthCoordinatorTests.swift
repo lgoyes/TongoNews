@@ -10,7 +10,7 @@ import XCTest
 
 class AuthCoordinatorTests: XCTestCase {
     
-    var sut: AuthCoordinatorType!
+    var sut: AnyCoordinator<AuthCoordinatorNode>!
 
     override func setUpWithError() throws {
         try super.setUpWithError()

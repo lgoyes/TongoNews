@@ -8,26 +8,24 @@
 import UIKit
 @testable import TongoNews
 
-final class MockAuthCoordinator: AuthCoordinatorType {
-    
-    
+final class MockAuthCoordinator: AnyCoordinator<AuthCoordinatorNode> {
     
     lazy var currentViewController: UIViewController = {
         return MockViewController()
     }()
     
+    init() {
+        super.init(navigationController: UINavigationController())
+    }
+    
     var onStart: (() -> ())?
     var onSetNode: (() -> ())?
     
-    func getRoutable() -> UIViewController {
-        return currentViewController
-    }
-    
-    func start() {
+    override func start() throws {
         onStart?()
     }
     
-    func setNode<T>(node: T, routable: Routable) throws where T : RoutableNode {
+    override func setNode(node: AuthCoordinatorNode, routable: Routable) throws {
         onSetNode?()
     }
 }

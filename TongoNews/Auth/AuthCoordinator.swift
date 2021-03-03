@@ -11,28 +11,20 @@ protocol AuthCoordinatorType: CoordinatorType {
 
 }
 
-final class AuthCoordinator: AuthCoordinatorType {
+enum AuthCoordinatorNode: RoutableNode {
+    case login
+}
+
+final class AuthCoordinator: AnyCoordinator<AuthCoordinatorNode>, AuthCoordinatorType {
     
-    enum Node: String, RoutableNode {
-        case login
-    }
-    
-    var currentNode: Node
-    var nodeManager: [Node: Routable]
-    
-    let navigationController: UINavigationController
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    override init(navigationController: UINavigationController) {
+        super.init(navigationController: navigationController)
         self.currentNode = .login
         nodeManager = [.login:LoginViewController()]
     }
     
-    func getRoutable() -> UIViewController {
-        return navigationController
-    }
-    
-    func start() throws {
-        guard let node = nodeManager[currentNode] else {
+    override func start() throws {
+        guard let currentNode = self.currentNode, let node = nodeManager[currentNode] else {
             throw CoordinatorError.nodeIsNotDefined
         }
         let routableNode = node.getRoutable()

@@ -11,40 +11,25 @@ protocol ApplicationCoordinatorType: CoordinatorType {
     
 }
 
-final class ApplicationCoordinator: ApplicationCoordinatorType {
+enum ApplicationCoordinatorNode: RoutableNode {
+    case auth
+}
+
+final class ApplicationCoordinator: AnyCoordinator<ApplicationCoordinatorNode>, ApplicationCoordinatorType {
     
-    enum Node: String, RoutableNode {
-        case auth
-    }
-    
-    var currentNode: Node
-    let navigationController: UINavigationController
-    var nodeManager: [Node: Routable]
-    
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    override init(navigationController: UINavigationController) {
+        super.init(navigationController: navigationController)
         currentNode = .auth
         nodeManager = [Node.auth: AuthCoordinator(navigationController: navigationController)]
     }
     
-    func getRoutable() -> UIViewController {
-        return navigationController
-    }
-    
-    func start() throws {
-        guard let node = nodeManager[currentNode] else {
+    override func start() throws {
+        guard let currentNode = self.currentNode, let node = nodeManager[currentNode] else {
             throw CoordinatorError.nodeIsNotDefined
         }
-        if let coordinator = node as? CoordinatorType {
+        if let coordinator = node as? AnyCoordinator<AuthCoordinatorNode> {
             try coordinator.start()
         }
-    }
-    
-    func setNode<T>(node: T, routable: Routable) throws where T : RoutableNode {
-        guard let acceptedNode = node as? Node else {
-            throw CoordinatorError.unableToSetRoutableNode
-        }
-        nodeManager[acceptedNode] = routable
     }
 }
 

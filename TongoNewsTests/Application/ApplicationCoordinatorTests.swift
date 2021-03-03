@@ -10,7 +10,7 @@ import XCTest
 
 class ApplicationCoordinatorTests: XCTestCase {
     
-    var sut: ApplicationCoordinatorType!
+    var sut: AnyCoordinator<ApplicationCoordinatorNode>!
     var mockAuthCoordinator: MockAuthCoordinator!
 
     override func setUpWithError() throws {
@@ -44,7 +44,7 @@ class ApplicationCoordinatorTests: XCTestCase {
     func test_WhenInitialized_ThenTheNodeForTheAuthShouldBeAnAuthCoordinator() {
         let sutImplementation = sut as! ApplicationCoordinator
         let associatedCoordinator = sutImplementation.nodeManager[.auth]
-        XCTAssertTrue(associatedCoordinator is AuthCoordinatorType)
+        XCTAssertTrue(associatedCoordinator is AnyCoordinator<AuthCoordinatorNode>)
     }
     
     func test_GivenAnExistingNodeForAuth_WhenSetNodeIsInvokedForAuth_ThenChangeTheNodeInstance() throws {
@@ -54,12 +54,6 @@ class ApplicationCoordinatorTests: XCTestCase {
         
         let selectedNode = sutImplementation.nodeManager[ApplicationCoordinator.Node.auth]
         XCTAssertTrue(selectedNode === mockAuthCoordinator)
-    }
-    
-    func test_WhenSetNodeIsInvokedForANonAcceptedNode_ThenThrowAnError() {
-        let sutImplementation = sut as! ApplicationCoordinator
-        let mockAuthCoordinator = MockAuthCoordinator()
-        XCTAssertThrowsError(try sutImplementation.setNode(node: AuthCoordinator.Node.login, routable: mockAuthCoordinator))
     }
     
     func test_GivenAMockedVersionOfTheAuthCoordinator_WhenStartIsInvoked_ThenAuthCoordinatorStartFunctionShouldBeInvoked() throws {
