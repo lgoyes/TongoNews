@@ -8,12 +8,12 @@
 import UIKit
 
 protocol AuthCoordinatorType: CoordinatorType {
-    
+
 }
 
 final class AuthCoordinator: AuthCoordinatorType {
     
-    enum Node {
+    enum Node: String, RoutableNode {
         case login
     }
     
@@ -24,7 +24,7 @@ final class AuthCoordinator: AuthCoordinatorType {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.currentNode = .login
-        nodeManager = [:]
+        nodeManager = [.login:LoginViewController()]
     }
     
     func getRoutable() -> UIViewController {
@@ -37,5 +37,12 @@ final class AuthCoordinator: AuthCoordinatorType {
         }
         let routableNode = node.getRoutable()
         self.navigationController.pushViewController(routableNode, animated: true)
+    }
+    
+    func setNode<T>(node: T, routable: Routable) throws where T : RoutableNode {
+        guard let acceptedNode = node as? Node else {
+            throw CoordinatorError.unableToSetRoutableNode
+        }
+        nodeManager[acceptedNode] = routable
     }
 }

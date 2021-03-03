@@ -13,7 +13,7 @@ protocol ApplicationCoordinatorType: CoordinatorType {
 
 final class ApplicationCoordinator: ApplicationCoordinatorType {
     
-    enum Node {
+    enum Node: String, RoutableNode {
         case auth
     }
     
@@ -24,7 +24,7 @@ final class ApplicationCoordinator: ApplicationCoordinatorType {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         currentNode = .auth
-        nodeManager = [.auth: AuthCoordinator(navigationController: navigationController)]
+        nodeManager = [Node.auth: AuthCoordinator(navigationController: navigationController)]
     }
     
     func getRoutable() -> UIViewController {
@@ -40,8 +40,11 @@ final class ApplicationCoordinator: ApplicationCoordinatorType {
         }
     }
     
-    func setFlow(flowType: Node, coordinator: CoordinatorType) {
-        nodeManager[flowType] = coordinator
+    func setNode<T>(node: T, routable: Routable) throws where T : RoutableNode {
+        guard let acceptedNode = node as? Node else {
+            throw CoordinatorError.unableToSetRoutableNode
+        }
+        nodeManager[acceptedNode] = routable
     }
 }
 

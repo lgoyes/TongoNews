@@ -10,4 +10,5 @@ import Foundation
 enum CoordinatorError: Error {
     case nodeIsNotDefined
     case nodeIsNotCoordinatorType
+    case unableToSetRoutableNode
 }

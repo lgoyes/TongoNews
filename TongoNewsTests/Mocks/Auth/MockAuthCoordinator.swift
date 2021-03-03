@@ -9,11 +9,15 @@ import UIKit
 @testable import TongoNews
 
 final class MockAuthCoordinator: AuthCoordinatorType {
+    
+    
+    
     lazy var currentViewController: UIViewController = {
         return MockViewController()
     }()
     
     var onStart: (() -> ())?
+    var onSetNode: (() -> ())?
     
     func getRoutable() -> UIViewController {
         return currentViewController
@@ -21,5 +25,9 @@ final class MockAuthCoordinator: AuthCoordinatorType {
     
     func start() {
         onStart?()
+    }
+    
+    func setNode<T>(node: T, routable: Routable) throws where T : RoutableNode {
+        onSetNode?()
     }
 }
