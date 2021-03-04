@@ -21,4 +21,10 @@ class LoginViewControllerTests: XCTestCase {
         sut = nil
         try super.tearDownWithError()
     }
+    
+    func test_WhenLoadViewIsInvoked_ThenALoginViewShouldBeSet() {
+        let sutImplementation = LoginViewController()
+        sutImplementation.loadView()
+        XCTAssertTrue( sutImplementation.view is LoginViewType )
+    }
 }

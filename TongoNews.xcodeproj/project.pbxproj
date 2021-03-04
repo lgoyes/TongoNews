@@ -24,6 +24,8 @@
 		0C5F0A8325EE9DF400D4AC8A /* UIViewController+Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0A8225EE9DF400D4AC8A /* UIViewController+Routable.swift */; };
 		0C5F0A9325EEA5A400D4AC8A /* CoordinatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0A9225EEA5A400D4AC8A /* CoordinatorError.swift */; };
 		0C94152825F054B6001C06A4 /* AnyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94152725F054B6001C06A4 /* AnyCoordinator.swift */; };
+		0C94153025F05C83001C06A4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94152F25F05C83001C06A4 /* LoginView.swift */; };
+		0C94153525F05CD7001C06A4 /* LoginViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94153425F05CD7001C06A4 /* LoginViewTests.swift */; };
 		0CDFE63925F0428F00975A39 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDFE63825F0428F00975A39 /* LoginViewControllerTests.swift */; };
 		0CDFE64225F042D800975A39 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDFE64125F042D800975A39 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
@@ -69,6 +71,8 @@
 		0C5F0A8225EE9DF400D4AC8A /* UIViewController+Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Routable.swift"; sourceTree = "<group>"; };
 		0C5F0A9225EEA5A400D4AC8A /* CoordinatorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorError.swift; sourceTree = "<group>"; };
 		0C94152725F054B6001C06A4 /* AnyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCoordinator.swift; sourceTree = "<group>"; };
+		0C94152F25F05C83001C06A4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		0C94153425F05CD7001C06A4 /* LoginViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewTests.swift; sourceTree = "<group>"; };
 		0CDFE63825F0428F00975A39 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		0CDFE64125F042D800975A39 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,6 +233,7 @@
 			children = (
 				0C5F0A6A25EE93F100D4AC8A /* AuthCoordinatorTests.swift */,
 				0CDFE63825F0428F00975A39 /* LoginViewControllerTests.swift */,
+				0C94153425F05CD7001C06A4 /* LoginViewTests.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				0CDFE64125F042D800975A39 /* LoginViewController.swift */,
+				0C94152F25F05C83001C06A4 /* LoginView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -376,6 +382,7 @@
 				0C94152825F054B6001C06A4 /* AnyCoordinator.swift in Sources */,
 				0C1B546E25ED928A00625783 /* AuthCoordinator.swift in Sources */,
 				0C5F0A7225EE9D8000D4AC8A /* Routable.swift in Sources */,
+				0C94153025F05C83001C06A4 /* LoginView.swift in Sources */,
 				0C1B543B25ED80BD00625783 /* ApplicationCoordinator.swift in Sources */,
 				0C1B53EE25ED7D3400625783 /* AppDelegate.swift in Sources */,
 				0C1B53F825ED7D3400625783 /* TongoNews.xcdatamodeld in Sources */,
@@ -392,6 +399,7 @@
 				0C1B547E25ED951700625783 /* MockAuthCoordinator.swift in Sources */,
 				0C5F0A6B25EE93F100D4AC8A /* AuthCoordinatorTests.swift in Sources */,
 				0CDFE63925F0428F00975A39 /* LoginViewControllerTests.swift in Sources */,
+				0C94153525F05CD7001C06A4 /* LoginViewTests.swift in Sources */,
 				0C1B545D25ED83FD00625783 /* ApplicationCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
