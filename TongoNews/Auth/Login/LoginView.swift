@@ -14,58 +14,83 @@ protocol LoginViewType {
 final class LoginView: UIView, LoginViewType {
     
     struct Constants {
-        static let email = "Email"
-        static let password = "Password"
+        static let emailPlaceholder = "Email"
+        static let passwordPlaceholder = "Password"
     }
     
-    lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        return stackView
-    }()
-    
-    lazy var emailField: UITextField = {
-        let emailField = UITextField()
-        emailField.placeholder = Constants.email
-        return emailField
-    }()
-    
-    lazy var passwordField: UITextField = {
-        let passwordField = UITextField()
-        passwordField.placeholder = Constants.password
-        return passwordField
-    }()
+    var mainStackView: UIStackView!
+    var topContainerStackView: UIStackView!
+    var emailField: UITextField!
+    var passwordField: UITextField!
+    var loginButton: UIButton!
     
     var subviewsAreConfigured = false
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configureSubviews()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError()
+    override func layoutSubviews() {
+        <#code#>
     }
     
     func configureSubviews() {
-        setMainContainer(mainStackView)
-        addField(emailField, to: mainStackView)
-        addField(passwordField, to: mainStackView)
+        setMainContainer()
+        configureTopContainerStackView(in: mainStackView)
+        configureLoginButton(in: mainStackView)
         subviewsAreConfigured = true
     }
     
-    func setMainContainer(_ stackView: UIStackView) {
-        self.addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+    func setMainContainer() {
+        self.mainStackView = UIStackView()
+        mainStackView.axis = .vertical
+
+        self.addSubview(mainStackView)
+        mainStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: self.layoutMarginsGuide.bottomAnchor),
-            stackView.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor),
+            mainStackView.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor),
+            mainStackView.bottomAnchor.constraint(equalTo: self.layoutMarginsGuide.bottomAnchor),
+            mainStackView.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
+            mainStackView.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor),
         ])
     }
     
-    func addField(_ textField: UITextField, to stackView: UIStackView) {
-        stackView.addArrangedSubview(textField)
+    func configureTopContainerStackView(in mainStack: UIStackView) {
+        assert(mainStack.arrangedSubviews.count == 0)
+        
+        self.topContainerStackView = UIStackView()
+        topContainerStackView.axis = .vertical
+        
+        addView(topContainerStackView, to: mainStack)
+        configureEmailField(in: topContainerStackView)
+        configurePasswordField(in: topContainerStackView)
+    }
+    
+    func configureLoginButton(in mainStack: UIStackView) {
+        assert(mainStack.arrangedSubviews.count == 1)
+        
+        self.loginButton = UIButton()
+        
+        addView(loginButton, to: mainStack)
+    }
+    
+    func configureEmailField(in topContainerStack: UIStackView) {
+        assert(topContainerStack.arrangedSubviews.count == 0)
+        
+        self.emailField = UITextField()
+        emailField.placeholder = Constants.emailPlaceholder
+        emailField.backgroundColor = Theme.Color.textFieldBackground
+        
+        addView(emailField, to: topContainerStack)
+    }
+    
+    func configurePasswordField(in topContainerStack: UIStackView) {
+        assert(topContainerStack.arrangedSubviews.count == 1)
+        
+        self.passwordField = UITextField()
+        passwordField.placeholder = Constants.passwordPlaceholder
+        passwordField.backgroundColor = Theme.Color.textFieldBackground
+        
+        addView(passwordField, to: topContainerStack)
+    }
+    
+    func addView(_ view: UIView, to stackView: UIStackView) {
+        stackView.addArrangedSubview(view)
     }
 }

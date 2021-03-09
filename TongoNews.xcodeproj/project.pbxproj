@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C0AD32425F7ADA700B4ED40 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0AD32325F7ADA700B4ED40 /* Theme.swift */; };
 		0C1B53EE25ED7D3400625783 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B53ED25ED7D3400625783 /* AppDelegate.swift */; };
 		0C1B53F025ED7D3400625783 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B53EF25ED7D3400625783 /* SceneDelegate.swift */; };
 		0C1B53F825ED7D3400625783 /* TongoNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B53F625ED7D3400625783 /* TongoNews.xcdatamodeld */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C0AD32325F7ADA700B4ED40 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		0C1B53EA25ED7D3400625783 /* TongoNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TongoNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C1B53ED25ED7D3400625783 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C1B53EF25ED7D3400625783 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C0AD32125F7AD9100B4ED40 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0C0AD32225F7AD9600B4ED40 /* Presentation */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0C0AD32225F7AD9600B4ED40 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				0C0AD32325F7ADA700B4ED40 /* Theme.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		0C1B53E125ED7D3400625783 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +143,7 @@
 		0C1B53EC25ED7D3400625783 /* TongoNews */ = {
 			isa = PBXGroup;
 			children = (
+				0C0AD32125F7AD9100B4ED40 /* Common */,
 				0C5F0A6F25EE9D6600D4AC8A /* BaseArchitecture */,
 				0C1B546C25ED927600625783 /* Auth */,
 				0C1B543925ED80B000625783 /* Application */,
@@ -380,6 +399,7 @@
 				0C5F0A7B25EE9D9C00D4AC8A /* CoordinatorType.swift in Sources */,
 				0C5F0A9325EEA5A400D4AC8A /* CoordinatorError.swift in Sources */,
 				0C94152825F054B6001C06A4 /* AnyCoordinator.swift in Sources */,
+				0C0AD32425F7ADA700B4ED40 /* Theme.swift in Sources */,
 				0C1B546E25ED928A00625783 /* AuthCoordinator.swift in Sources */,
 				0C5F0A7225EE9D8000D4AC8A /* Routable.swift in Sources */,
 				0C94153025F05C83001C06A4 /* LoginView.swift in Sources */,

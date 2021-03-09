@@ -22,65 +22,135 @@ class LoginViewTests: XCTestCase {
         try super.tearDownWithError()
     }
     
-    func testWhenInit_ThenInvokeConfigureSubviews() {
-        XCTAssertTrue( sut.subviewsAreConfigured )
-    }
-    
     func test_WhenSetMainContainerIsCalled_ThenAddStackviewAsSubview() {
-        let mainStackView = UIStackView()
-        sut.setMainContainer(mainStackView)
-        let mainStackViewIsSubview = sut.subviews.contains(mainStackView)
+        sut.setMainContainer()
+        
+        let mainStackView = sut.mainStackView
+        let mainStackViewIsSubview = sut.subviews.contains(mainStackView!)
         XCTAssertTrue(mainStackViewIsSubview)
     }
     
     func test_WhenSetMainContainerIsCalled_ThenResetTranslatesAutoresizingMaskIntoConstraints() {
-        let mainStackView = UIStackView()
-        sut.setMainContainer(mainStackView)
-        XCTAssertFalse(mainStackView.translatesAutoresizingMaskIntoConstraints)
+        sut.setMainContainer()
+        
+        let mainStackView = sut.mainStackView
+        XCTAssertFalse(mainStackView!.translatesAutoresizingMaskIntoConstraints)
     }
     
     func test_WhenConfigureSubViewsIsCalled_ThenSetTheMainStackViewAsSubview() {
         sut.configureSubviews()
         
         let mainStackView = sut.mainStackView
-        let mainStackViewIsSubview = sut.subviews.contains(mainStackView)
+        let mainStackViewIsSubview = sut.subviews.contains(mainStackView!)
         XCTAssertTrue(mainStackViewIsSubview)
     }
     
-    func test_WhenAddFieldIsCalled_ThenAddFieldToTheMainStackView() {
+    func test_WhenAddViewIsCalled_ThenAddFieldToTheMainStackView() {
         let mainStackView = UIStackView()
         
         let textField = UITextField()
-        sut.addField(textField, to: mainStackView)
+        sut.addView(textField, to: mainStackView)
         
         XCTAssertTrue(mainStackView.arrangedSubviews.contains(textField))
     }
     
-    func test_WhenConfigureSubViewsIsCalled_ThenSetTheEmailFieldAsTheFirstSubviewInTheStack() {
+    func test_WhenAddViewIsCalled_ThenAddStackViewToTheMainStackView() {
+        let mainStackView = UIStackView()
+        
+        let topStackView = UIStackView()
+        sut.addView(topStackView, to: mainStackView)
+        
+        XCTAssertTrue(mainStackView.arrangedSubviews.contains(topStackView))
+    }
+    
+    func test_WhenConfigureSubViewsIsCalled_ThenSetTheTopContainerStackViewAsTheFirstSubviewInTheStack() {
         sut.configureSubviews()
         
         let mainStackView = sut.mainStackView
-        let emailField = sut.emailField
+        let topStackView = sut.topContainerStackView
         
-        XCTAssertTrue(mainStackView.subviews[0] === emailField)
+        XCTAssertTrue(mainStackView!.subviews[0] === topStackView)
     }
     
-    func test_WhenConfigureSubViewsIsCalled_ThenSetThePasswordFieldAsTheSecondSubviewInTheStack() {
+    func test_WhenConfigureTopContainerStackView_ThenSetTheTopContainerStackViewAsTheFirstSubviewInTheStack() {
+        let mainStackView = UIStackView()
+        sut.configureTopContainerStackView(in: mainStackView)
+        
+        let topContainerStack = sut.topContainerStackView
+        XCTAssertTrue(mainStackView.subviews[0] === topContainerStack)
+    }
+    
+    func test_WhenConfigureTopContainerStackView_ThenSetTheEmailFieldAsTheFirstSubviewInTheStack() {
+        let mainStackView = UIStackView()
+        sut.configureTopContainerStackView(in: mainStackView)
+        
+        let topContainerStack = sut.topContainerStackView
+        XCTAssertTrue(topContainerStack!.arrangedSubviews[0] === sut.emailField)
+    }
+    
+    func test_WhenConfigureTopContainerStackView_ThenSetThePasswordFieldAsTheSecondSubviewInTheStack() {
+        let mainStackView = UIStackView()
+        sut.configureTopContainerStackView(in: mainStackView)
+        
+        let topContainerStack = sut.topContainerStackView
+        XCTAssertTrue(topContainerStack!.arrangedSubviews[1] === sut.passwordField)
+    }
+    
+    func test_GivenConfigureTopContainerWasInvoked_WhenConfigureLoginButton_ThenSetLoginButtonAsTheSecondSubviewInTheMainStack() {
+        let mainStackView = UIStackView()
+        sut.configureTopContainerStackView(in: mainStackView)
+        
+        sut.configureLoginButton(in: mainStackView)
+        let loginButton = sut.loginButton
+        
+        XCTAssertTrue(mainStackView.subviews[1] === loginButton)
+    }
+    
+    func test_WhenConfigureSubViewsIsCalled_ThenSetTheLoginButtonAsTheSecondSubviewInTheStack() {
         sut.configureSubviews()
         
         let mainStackView = sut.mainStackView
-        let passwordField = sut.passwordField
+        let loginButton = sut.loginButton
         
-        XCTAssertTrue(mainStackView.subviews[1] === passwordField)
+        XCTAssertTrue(mainStackView!.subviews[1] === loginButton)
     }
     
-    func test_WhenInit_SetPlaceHolderToEmailField() {
-        let emailField = sut.emailField
-        XCTAssertEqual(emailField.placeholder, LoginView.Constants.email)
+    func test_WhenConfigureEmailField_ThenSetEmailFieldAsTheFirstSubviewInTheTopStack() {
+        let topStackView = UIStackView()
+        sut.configureEmailField(in: topStackView)
+        let emailField = sut.emailField!
+        XCTAssertTrue(topStackView.subviews[0] === emailField)
     }
     
-    func test_WhenInit_SetPlaceHolderToPasswordField() {
-        let passwordField = sut.passwordField
-        XCTAssertEqual(passwordField.placeholder, LoginView.Constants.password)
+    func test_WhenConfigureEmailField_SetPlaceHolderToEmailField() {
+        let topStackView = UIStackView()
+        sut.configureEmailField(in: topStackView)
+        let emailField = sut.emailField!
+        XCTAssertEqual(emailField.placeholder, LoginView.Constants.emailPlaceholder)
+    }
+    
+    func test_WhenConfigureEmailField_SetGrayBackgroundToEmailField() {
+        let topStackView = UIStackView()
+        sut.configureEmailField(in: topStackView)
+        let emailField = sut.emailField!
+        XCTAssertEqual(emailField.backgroundColor?.accessibilityName, Theme.Color.textFieldBackground.accessibilityName)
+    }
+    
+    func test_GivenConfigureEmailFieldWasInvoked_WhenConfigurePasswordField_SetPlaceHolderToPasswordField() {
+        let topStackView = UIStackView()
+        sut.configureEmailField(in: topStackView)
+        
+        sut.configurePasswordField(in: topStackView)
+        let passwordField = sut.passwordField!
+        XCTAssertEqual(passwordField.placeholder, LoginView.Constants.passwordPlaceholder)
+    }
+    
+    func test_GivenConfigureEmailFieldWasInvoked_WhenConfigurePasswordField_SetGrayBackgroundToPasswordField() {
+        let topStackView = UIStackView()
+        sut.configureEmailField(in: topStackView)
+        
+        sut.configurePasswordField(in: topStackView)
+        let passwordField = sut.passwordField!
+        XCTAssertEqual(passwordField.backgroundColor?.accessibilityName, Theme.Color.textFieldBackground.accessibilityName)
     }
 }
