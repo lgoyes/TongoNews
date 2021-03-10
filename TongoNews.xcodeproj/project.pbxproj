@@ -162,7 +162,7 @@
 			children = (
 				0CDFE62525F041D600975A39 /* Auth */,
 				0CDFE62425F041CD00975A39 /* Application */,
-				0C1B547C25ED950700625783 /* Mocks */,
+				0C1B547C25ED950700625783 /* Fakes */,
 				0C1B540925ED7D3500625783 /* Info.plist */,
 			);
 			path = TongoNewsTests;
@@ -194,13 +194,13 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		0C1B547C25ED950700625783 /* Mocks */ = {
+		0C1B547C25ED950700625783 /* Fakes */ = {
 			isa = PBXGroup;
 			children = (
 				0C1B548525ED95C900625783 /* FakeViewController.swift */,
 				0C5F0A5D25EE93C700D4AC8A /* Auth */,
 			);
-			path = Mocks;
+			path = Fakes;
 			sourceTree = "<group>";
 		};
 		0C5F0A5D25EE93C700D4AC8A /* Auth */ = {
