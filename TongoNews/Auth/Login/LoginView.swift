@@ -26,10 +26,6 @@ final class LoginView: UIView, LoginViewType {
     
     var subviewsAreConfigured = false
     
-    override func layoutSubviews() {
-        <#code#>
-    }
-    
     func configureSubviews() {
         setMainContainer()
         configureTopContainerStackView(in: mainStackView)

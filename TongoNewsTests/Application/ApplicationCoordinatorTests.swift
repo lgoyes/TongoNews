@@ -58,16 +58,11 @@ class ApplicationCoordinatorTests: XCTestCase {
     
     func test_GivenAMockedVersionOfTheAuthCoordinator_WhenStartIsInvoked_ThenAuthCoordinatorStartFunctionShouldBeInvoked() throws {
         let sutImplementation = sut as! ApplicationCoordinator
-        let expectation = XCTestExpectation(description: "Start method is called on auth coordinator")
-        let mockAuthCoordinator = MockAuthCoordinator()
-        mockAuthCoordinator.onStart = {
-            expectation.fulfill()
-        }
         try sutImplementation.setNode(node: ApplicationCoordinator.Node.auth, routable: mockAuthCoordinator)
         
         try sut.start()
-         
-        wait(for: [expectation], timeout: 0.1)
+        
+        XCTAssertTrue(mockAuthCoordinator.wasStartCalled())
     }
     
     func test_GivenThatNoCoordinatorIsAssignedToTheAuthFlow_WhenStartIsInvoked_ThenShouldThrowError() {

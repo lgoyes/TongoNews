@@ -18,14 +18,22 @@ final class MockAuthCoordinator: AnyCoordinator<AuthCoordinator.Node> {
         super.init(navigationController: UINavigationController())
     }
     
-    var onStart: (() -> ())?
-    var onSetNode: (() -> ())?
+    private var startCalled = false
+    private var nodes: [AuthCoordinator.Node: Routable] = [:]
     
     override func start() throws {
-        onStart?()
+        startCalled = true
     }
     
     override func setNode(node: AuthCoordinator.Node, routable: Routable) throws {
-        onSetNode?()
+        nodes[node] = routable
+    }
+    
+    func wasStartCalled() -> Bool {
+        return startCalled
+    }
+    
+    func getRoutable(for node: AuthCoordinator.Node) -> Routable? {
+        return nodes[node]
     }
 }
