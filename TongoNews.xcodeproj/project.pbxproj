@@ -29,6 +29,7 @@
 		0C94153525F05CD7001C06A4 /* LoginViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94153425F05CD7001C06A4 /* LoginViewTests.swift */; };
 		0CC4AB0225F8FDA30051C43A /* SeamLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC4AB0125F8FDA30051C43A /* SeamLoginView.swift */; };
 		0CC4AB0B25F900A60051C43A /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC4AB0A25F900A60051C43A /* ViewType.swift */; };
+		0CC4AB1A25F909180051C43A /* FakeLoginViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC4AB1925F909180051C43A /* FakeLoginViewDelegate.swift */; };
 		0CDFE63925F0428F00975A39 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDFE63825F0428F00975A39 /* LoginViewControllerTests.swift */; };
 		0CDFE64225F042D800975A39 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDFE64125F042D800975A39 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,7 @@
 		0C94153425F05CD7001C06A4 /* LoginViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewTests.swift; sourceTree = "<group>"; };
 		0CC4AB0125F8FDA30051C43A /* SeamLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamLoginView.swift; sourceTree = "<group>"; };
 		0CC4AB0A25F900A60051C43A /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
+		0CC4AB1925F909180051C43A /* FakeLoginViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLoginViewDelegate.swift; sourceTree = "<group>"; };
 		0CDFE63825F0428F00975A39 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		0CDFE64125F042D800975A39 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -254,6 +256,7 @@
 		0CC4AB0F25F908840051C43A /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				0CC4AB1825F909040051C43A /* Fakes */,
 				0CC4AB0025F8FD8C0051C43A /* Seams */,
 				0C94153425F05CD7001C06A4 /* LoginViewTests.swift */,
 				0CDFE63825F0428F00975A39 /* LoginViewControllerTests.swift */,
@@ -275,6 +278,14 @@
 				0C1B547C25ED950700625783 /* Fakes */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		0CC4AB1825F909040051C43A /* Fakes */ = {
+			isa = PBXGroup;
+			children = (
+				0CC4AB1925F909180051C43A /* FakeLoginViewDelegate.swift */,
+			);
+			path = Fakes;
 			sourceTree = "<group>";
 		};
 		0CDFE62425F041CD00975A39 /* Application */ = {
@@ -458,6 +469,7 @@
 				0CC4AB0225F8FDA30051C43A /* SeamLoginView.swift in Sources */,
 				0C1B547E25ED951700625783 /* FakeAuthCoordinator.swift in Sources */,
 				0C5F0A6B25EE93F100D4AC8A /* AuthCoordinatorTests.swift in Sources */,
+				0CC4AB1A25F909180051C43A /* FakeLoginViewDelegate.swift in Sources */,
 				0CDFE63925F0428F00975A39 /* LoginViewControllerTests.swift in Sources */,
 				0C94153525F05CD7001C06A4 /* LoginViewTests.swift in Sources */,
 				0C1B545D25ED83FD00625783 /* ApplicationCoordinatorTests.swift in Sources */,

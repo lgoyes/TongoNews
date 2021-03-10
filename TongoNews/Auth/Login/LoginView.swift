@@ -8,7 +8,11 @@
 import UIKit
 
 protocol LoginViewType: ViewType {
-    
+    func setDelegate(_ delegate: LoginViewDelegate)
+}
+
+protocol LoginViewDelegate: AnyObject {
+    func onLoginButtonPressed()
 }
 
 class LoginView: UIView, LoginViewType {
@@ -33,6 +37,12 @@ class LoginView: UIView, LoginViewType {
     var emailField: UITextField!
     var passwordField: UITextField!
     var loginButton: UIButton!
+    
+    weak var delegate: LoginViewDelegate?
+    
+    func setDelegate(_ delegate: LoginViewDelegate) {
+        self.delegate = delegate
+    }
     
     func configureSubviews() {
         setMainContainer()
@@ -73,6 +83,7 @@ class LoginView: UIView, LoginViewType {
         self.loginButton = UIButton()
         loginButton.setTitle(Constant.loginButtonTitle, for: .normal)
         loginButton.backgroundColor = Theme.Color.active
+        loginButton.addTarget(self, action: #selector(onLoginButtonPressed(_:)), for: .touchUpInside)
         
         addView(loginButton, to: mainStack)
     }
@@ -99,5 +110,9 @@ class LoginView: UIView, LoginViewType {
     
     func addView(_ view: UIView, to stackView: UIStackView) {
         stackView.addArrangedSubview(view)
+    }
+    
+    @objc func onLoginButtonPressed(_ sender: UIButton) {
+        delegate?.onLoginButtonPressed()
     }
 }

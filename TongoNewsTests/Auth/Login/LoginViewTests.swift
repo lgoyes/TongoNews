@@ -216,8 +216,21 @@ class LoginViewTests: XCTestCase {
         XCTAssertEqual(loginButton.backgroundColor?.accessibilityName, Theme.Color.active.accessibilityName)
     }
     
-    func test_WhenLoginButtonIsTapped_ThenInformOnDelegateAboutAction() {
-        sut.configureSubviews()
+    func test_WhenSetDelegateIsCalled_ThenSetDelegate() {
+        let sut = SeamLoginView.getInstance() as! SeamLoginView
+        let fakeDelegate = FakeLoginViewDelegate()
+        sut.setDelegate(fakeDelegate)
         
+        XCTAssertTrue(sut.delegate === fakeDelegate)
+    }
+    
+    func test_GivenSubviewsAreConfiguredAndDelegateIsSet_WhenLoginButtonIsTapped_ThenInformOnDelegateAboutAction() {
+        sut.configureSubviews()
+        let fakeDelegate = FakeLoginViewDelegate()
+        sut.setDelegate(fakeDelegate)
+        
+        sut.loginButton.sendActions(for: .touchUpInside)
+            
+        XCTAssertTrue(fakeDelegate.loginButtonPressed)
     }
 }
