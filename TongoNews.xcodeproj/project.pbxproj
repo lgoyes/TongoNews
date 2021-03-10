@@ -254,7 +254,6 @@
 		0CC4AB0F25F908840051C43A /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				0CC4AB1325F908BD0051C43A /* Fakes */,
 				0CC4AB0025F8FD8C0051C43A /* Seams */,
 				0C94153425F05CD7001C06A4 /* LoginViewTests.swift */,
 				0CDFE63825F0428F00975A39 /* LoginViewControllerTests.swift */,
@@ -289,6 +288,7 @@
 		0CDFE62525F041D600975A39 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				0CC4AB1325F908BD0051C43A /* Fakes */,
 				0CC4AB0F25F908840051C43A /* Login */,
 				0C5F0A6A25EE93F100D4AC8A /* AuthCoordinatorTests.swift */,
 			);
