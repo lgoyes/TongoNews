@@ -43,10 +43,10 @@ class AuthCoordinatorTests: XCTestCase {
     
     func test_GivenAnExistingNodeForLogin_WhenSetNodeIsInvokedForLogin_ThenChangeTheNodeInstance() throws {
         let sutImplementation = sut as! AuthCoordinator
-        let mockLoginController = FakeViewController()
-        try sutImplementation.setNode(node: AuthCoordinator.Node.login, routable: mockLoginController)
+        let fakeLoginController = FakeViewController()
+        try sutImplementation.setNode(node: AuthCoordinator.Node.login, routable: fakeLoginController)
         
         let selectedNode = sutImplementation.nodeManager[.login]
-        XCTAssertTrue(selectedNode === mockLoginController)
+        XCTAssertTrue(selectedNode === fakeLoginController)
     }
 }

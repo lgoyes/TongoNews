@@ -11,13 +11,13 @@ import XCTest
 class ApplicationCoordinatorTests: XCTestCase {
     
     var sut: AnyCoordinator<ApplicationCoordinator.Node>!
-    var mockAuthCoordinator: FakeAuthCoordinator!
+    var fakeAuthCoordinator: FakeAuthCoordinator!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
-        mockAuthCoordinator = FakeAuthCoordinator()
+        fakeAuthCoordinator = FakeAuthCoordinator()
         let sutImplementation = ApplicationCoordinator(navigationController: UINavigationController())
-        try sutImplementation.setNode(node: ApplicationCoordinator.Node.auth, routable: mockAuthCoordinator)
+        try sutImplementation.setNode(node: ApplicationCoordinator.Node.auth, routable: fakeAuthCoordinator)
         sut = sutImplementation
     }
 
@@ -29,7 +29,7 @@ class ApplicationCoordinatorTests: XCTestCase {
     func test_GivenANavigationControllerWasInjected_WhenAsRoutableIsInvoked_ThenReturnTheInjectedNavigationController() throws {
         let navigationController = UINavigationController()
         let sutImplementation = ApplicationCoordinator(navigationController: navigationController)
-        try sutImplementation.setNode(node: ApplicationCoordinator.Node.auth, routable: mockAuthCoordinator)
+        try sutImplementation.setNode(node: ApplicationCoordinator.Node.auth, routable: fakeAuthCoordinator)
         sut = sutImplementation
         let presentedViewController = sut.getRoutable()
         XCTAssertEqual(presentedViewController, navigationController)
@@ -49,20 +49,20 @@ class ApplicationCoordinatorTests: XCTestCase {
     
     func test_GivenAnExistingNodeForAuth_WhenSetNodeIsInvokedForAuth_ThenChangeTheNodeInstance() throws {
         let sutImplementation = sut as! ApplicationCoordinator
-        let mockAuthCoordinator = FakeAuthCoordinator()
-        try sutImplementation.setNode(node: ApplicationCoordinator.Node.auth, routable: mockAuthCoordinator)
+        let fakeAuthCoordinator = FakeAuthCoordinator()
+        try sutImplementation.setNode(node: ApplicationCoordinator.Node.auth, routable: fakeAuthCoordinator)
         
         let selectedNode = sutImplementation.nodeManager[ApplicationCoordinator.Node.auth]
-        XCTAssertTrue(selectedNode === mockAuthCoordinator)
+        XCTAssertTrue(selectedNode === fakeAuthCoordinator)
     }
     
-    func test_GivenAMockedVersionOfTheAuthCoordinator_WhenStartIsInvoked_ThenAuthCoordinatorStartFunctionShouldBeInvoked() throws {
+    func test_GivenAFakedVersionOfTheAuthCoordinator_WhenStartIsInvoked_ThenAuthCoordinatorStartFunctionShouldBeInvoked() throws {
         let sutImplementation = sut as! ApplicationCoordinator
-        try sutImplementation.setNode(node: ApplicationCoordinator.Node.auth, routable: mockAuthCoordinator)
+        try sutImplementation.setNode(node: ApplicationCoordinator.Node.auth, routable: fakeAuthCoordinator)
         
         try sut.start()
         
-        XCTAssertTrue(mockAuthCoordinator.wasStartCalled())
+        XCTAssertTrue(fakeAuthCoordinator.wasStartCalled())
     }
     
     func test_GivenThatNoCoordinatorIsAssignedToTheAuthFlow_WhenStartIsInvoked_ThenShouldThrowError() {
