@@ -5,9 +5,9 @@
 //  Created by Luis Goyes Garces on 10/03/21.
 //
 
-import Foundation
+import UIKit
 
-protocol ViewType: AnyObject {
+protocol ViewType where Self: UIView {
     init()
     func configureSubviews()
     static func getInstance() -> ViewType

@@ -13,6 +13,6 @@ protocol LoginControllerType {
 
 final class LoginViewController: UIViewController, LoginControllerType {
     override func loadView() {
-        self.view = LoginView()
+        self.view = LoginView.getInstance()
     }
 }
