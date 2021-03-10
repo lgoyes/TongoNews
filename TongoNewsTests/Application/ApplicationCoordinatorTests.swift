@@ -11,11 +11,11 @@ import XCTest
 class ApplicationCoordinatorTests: XCTestCase {
     
     var sut: AnyCoordinator<ApplicationCoordinator.Node>!
-    var mockAuthCoordinator: MockAuthCoordinator!
+    var mockAuthCoordinator: FakeAuthCoordinator!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
-        mockAuthCoordinator = MockAuthCoordinator()
+        mockAuthCoordinator = FakeAuthCoordinator()
         let sutImplementation = ApplicationCoordinator(navigationController: UINavigationController())
         try sutImplementation.setNode(node: ApplicationCoordinator.Node.auth, routable: mockAuthCoordinator)
         sut = sutImplementation
@@ -49,7 +49,7 @@ class ApplicationCoordinatorTests: XCTestCase {
     
     func test_GivenAnExistingNodeForAuth_WhenSetNodeIsInvokedForAuth_ThenChangeTheNodeInstance() throws {
         let sutImplementation = sut as! ApplicationCoordinator
-        let mockAuthCoordinator = MockAuthCoordinator()
+        let mockAuthCoordinator = FakeAuthCoordinator()
         try sutImplementation.setNode(node: ApplicationCoordinator.Node.auth, routable: mockAuthCoordinator)
         
         let selectedNode = sutImplementation.nodeManager[ApplicationCoordinator.Node.auth]
