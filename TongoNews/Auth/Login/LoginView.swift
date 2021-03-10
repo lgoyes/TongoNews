@@ -13,9 +13,19 @@ protocol LoginViewType: ViewType {
 
 class LoginView: UIView, LoginViewType {
     
-    struct Constants {
+    struct Constant {
         static let emailPlaceholder = "Email"
         static let passwordPlaceholder = "Password"
+        static let loginButtonTitle = "Login"
+        struct Margin {
+            struct MainContainer {
+                static let top = 20.0
+                static let bottom = -20.0
+                static let leading = 15.0
+                static let trailing = -15.0
+            }
+        }
+        static let topContainerSpacing = 15
     }
     
     var mainStackView: UIStackView!
@@ -33,14 +43,15 @@ class LoginView: UIView, LoginViewType {
     func setMainContainer() {
         self.mainStackView = UIStackView()
         mainStackView.axis = .vertical
+        mainStackView.distribution = .equalSpacing
 
         self.addSubview(mainStackView)
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            mainStackView.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor),
-            mainStackView.bottomAnchor.constraint(equalTo: self.layoutMarginsGuide.bottomAnchor),
-            mainStackView.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor),
-            mainStackView.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor),
+            mainStackView.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor, constant: CGFloat(Constant.Margin.MainContainer.top)),
+            mainStackView.bottomAnchor.constraint(equalTo: self.layoutMarginsGuide.bottomAnchor, constant: CGFloat(Constant.Margin.MainContainer.bottom)),
+            mainStackView.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor, constant: CGFloat(Constant.Margin.MainContainer.leading)),
+            mainStackView.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor, constant: CGFloat(Constant.Margin.MainContainer.trailing)),
         ])
     }
     
@@ -49,6 +60,7 @@ class LoginView: UIView, LoginViewType {
         
         self.topContainerStackView = UIStackView()
         topContainerStackView.axis = .vertical
+        topContainerStackView.spacing = CGFloat(Constant.topContainerSpacing)
         
         addView(topContainerStackView, to: mainStack)
         configureEmailField(in: topContainerStackView)
@@ -59,6 +71,8 @@ class LoginView: UIView, LoginViewType {
         assert(mainStack.arrangedSubviews.count == 1)
         
         self.loginButton = UIButton()
+        loginButton.setTitle(Constant.loginButtonTitle, for: .normal)
+        loginButton.backgroundColor = Theme.Color.active
         
         addView(loginButton, to: mainStack)
     }
@@ -67,7 +81,7 @@ class LoginView: UIView, LoginViewType {
         assert(topContainerStack.arrangedSubviews.count == 0)
         
         self.emailField = UITextField()
-        emailField.placeholder = Constants.emailPlaceholder
+        emailField.placeholder = Constant.emailPlaceholder
         emailField.backgroundColor = Theme.Color.textFieldBackground
         
         addView(emailField, to: topContainerStack)
@@ -77,7 +91,7 @@ class LoginView: UIView, LoginViewType {
         assert(topContainerStack.arrangedSubviews.count == 1)
         
         self.passwordField = UITextField()
-        passwordField.placeholder = Constants.passwordPlaceholder
+        passwordField.placeholder = Constant.passwordPlaceholder
         passwordField.backgroundColor = Theme.Color.textFieldBackground
         
         addView(passwordField, to: topContainerStack)

@@ -10,5 +10,6 @@ import UIKit
 struct Theme {
     struct Color {
         static let textFieldBackground = UIColor.systemGray2
+        static let active = UIColor.systemBlue
     }
 }

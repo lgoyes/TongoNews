@@ -30,6 +30,20 @@ class LoginViewTests: XCTestCase {
         XCTAssertTrue(mainStackViewIsSubview)
     }
     
+    func test_WhenSetMainContainerIsCalled_ThenCreateAVerticalStack() {
+        sut.setMainContainer()
+        
+        let mainStackView = sut.mainStackView!
+        XCTAssertEqual(mainStackView.axis, .vertical)
+    }
+    
+    func test_WhenSetMainContainerIsCalled_ThenSetDistributionToEquallySpaced() {
+        sut.setMainContainer()
+        
+        let mainStackView = sut.mainStackView!
+        XCTAssertEqual(mainStackView.distribution, .equalSpacing)
+    }
+    
     func test_WhenSetMainContainerIsCalled_ThenResetTranslatesAutoresizingMaskIntoConstraints() {
         sut.setMainContainer()
         
@@ -80,6 +94,22 @@ class LoginViewTests: XCTestCase {
         XCTAssertTrue(mainStackView.subviews[0] === topContainerStack)
     }
     
+    func test_WhenConfigureTopContainerStackView_CreateAVerticalStackAsTheTopContainer() {
+        let mainStackView = UIStackView()
+        sut.configureTopContainerStackView(in: mainStackView)
+        
+        let topContainerStack = sut.topContainerStackView!
+        XCTAssertEqual(topContainerStack.axis, .vertical)
+    }
+    
+    func test_WhenConfigureTopContainerStackView_AddSomeSpacingToTheTopContainer() {
+        let mainStackView = UIStackView()
+        sut.configureTopContainerStackView(in: mainStackView)
+        
+        let topContainerStack = sut.topContainerStackView!
+        XCTAssertEqual(topContainerStack.spacing, CGFloat(LoginView.Constant.topContainerSpacing))
+    }
+    
     func test_WhenConfigureTopContainerStackView_ThenSetTheEmailFieldAsTheFirstSubviewInTheStack() {
         let mainStackView = UIStackView()
         sut.configureTopContainerStackView(in: mainStackView)
@@ -126,7 +156,7 @@ class LoginViewTests: XCTestCase {
         let topStackView = UIStackView()
         sut.configureEmailField(in: topStackView)
         let emailField = sut.emailField!
-        XCTAssertEqual(emailField.placeholder, LoginView.Constants.emailPlaceholder)
+        XCTAssertEqual(emailField.placeholder, LoginView.Constant.emailPlaceholder)
     }
     
     func test_WhenConfigureEmailField_SetGrayBackgroundToEmailField() {
@@ -142,7 +172,7 @@ class LoginViewTests: XCTestCase {
         
         sut.configurePasswordField(in: topStackView)
         let passwordField = sut.passwordField!
-        XCTAssertEqual(passwordField.placeholder, LoginView.Constants.passwordPlaceholder)
+        XCTAssertEqual(passwordField.placeholder, LoginView.Constant.passwordPlaceholder)
     }
     
     func test_GivenConfigureEmailFieldWasInvoked_WhenConfigurePasswordField_SetGrayBackgroundToPasswordField() {
@@ -162,5 +192,27 @@ class LoginViewTests: XCTestCase {
     func test_WhenGetInstanceIsCalled_ThenShouldInvokeConfigureSubviews() {
         let sut = SeamLoginView.getInstance() as! SeamLoginView
         XCTAssertTrue(sut.configureSubviewsWasCalled)
+    }
+    
+    func test_GivenConfigureTopContainerWasInvoked_WhenConfigureLoginButtonIsCalled_ThenSetTitleToLogin() {
+        let mainStackView = UIStackView()
+        sut.configureTopContainerStackView(in: mainStackView)
+        
+        sut.configureLoginButton(in: mainStackView)
+        
+        let loginButton = sut.loginButton!
+        
+        XCTAssertEqual(loginButton.currentTitle, LoginView.Constant.loginButtonTitle)
+    }
+    
+    func test_GivenConfigureTopContainerWasInvoked_WhenConfigureLoginButtonIsCalled_ThenSetActiveColorToBackgrounColor() {
+        let mainStackView = UIStackView()
+        sut.configureTopContainerStackView(in: mainStackView)
+        
+        sut.configureLoginButton(in: mainStackView)
+        
+        let loginButton = sut.loginButton!
+        
+        XCTAssertEqual(loginButton.backgroundColor?.accessibilityName, Theme.Color.active.accessibilityName)
     }
 }

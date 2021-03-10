@@ -39,21 +39,6 @@
                ReferencedContainer = "container:TongoNews.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0C1B540D25ED7D3500625783"
-               BuildableName = "TongoNewsUITests.xctest"
-               BlueprintName = "TongoNewsUITests"
-               ReferencedContainer = "container:TongoNews.xcodeproj">
-            </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "TongoNewsUITests">
-               </Test>
-            </SkippedTests>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
