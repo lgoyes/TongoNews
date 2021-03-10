@@ -215,4 +215,9 @@ class LoginViewTests: XCTestCase {
         
         XCTAssertEqual(loginButton.backgroundColor?.accessibilityName, Theme.Color.active.accessibilityName)
     }
+    
+    func test_WhenLoginButtonIsTapped_ThenInformOnDelegateAboutAction() {
+        sut.configureSubviews()
+        
+    }
 }
