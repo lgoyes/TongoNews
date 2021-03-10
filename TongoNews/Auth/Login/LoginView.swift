@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol LoginViewType {
+protocol LoginViewType: ViewType {
     
 }
 
-final class LoginView: UIView, LoginViewType {
+class LoginView: UIView, LoginViewType {
     
     struct Constants {
         static let emailPlaceholder = "Email"
@@ -24,13 +24,10 @@ final class LoginView: UIView, LoginViewType {
     var passwordField: UITextField!
     var loginButton: UIButton!
     
-    var subviewsAreConfigured = false
-    
     func configureSubviews() {
         setMainContainer()
         configureTopContainerStackView(in: mainStackView)
         configureLoginButton(in: mainStackView)
-        subviewsAreConfigured = true
     }
     
     func setMainContainer() {

@@ -153,4 +153,14 @@ class LoginViewTests: XCTestCase {
         let passwordField = sut.passwordField!
         XCTAssertEqual(passwordField.backgroundColor?.accessibilityName, Theme.Color.textFieldBackground.accessibilityName)
     }
+    
+    func test_WhenGetInstanceIsCalled_ThenShouldReturnALoginViewInstance() {
+        let sut = LoginView.getInstance()
+        XCTAssertNotNil(sut)
+    }
+    
+    func test_WhenGetInstanceIsCalled_ThenShouldInvokeConfigureSubviews() {
+        let sut = SeamLoginView.getInstance() as! SeamLoginView
+        XCTAssertTrue(sut.configureSubviewsWasCalled)
+    }
 }
