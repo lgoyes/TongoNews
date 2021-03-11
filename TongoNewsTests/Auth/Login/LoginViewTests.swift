@@ -10,6 +10,26 @@ import XCTest
 @testable import TongoNews
 
 class LoginViewTests: XCTestCase {
+    
+    final class SeamLoginView: LoginView {
+        
+        var configureSubviewsWasCalled = false
+        
+        override func configureSubviews() {
+            super.configureSubviews()
+            configureSubviewsWasCalled = true
+        }
+    }
+    
+    final class FakeLoginViewDelegate: LoginViewDelegate {
+        
+        var loginButtonPressed = false
+        
+        func onLoginButtonPressed() {
+            loginButtonPressed = true
+        }
+    }
+    
     var sut: LoginView!
     
     override func setUpWithError() throws {
@@ -230,7 +250,7 @@ class LoginViewTests: XCTestCase {
         sut.setDelegate(fakeDelegate)
         
         sut.loginButton.sendActions(for: .touchUpInside)
-            
+        
         XCTAssertTrue(fakeDelegate.loginButtonPressed)
     }
 }
