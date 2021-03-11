@@ -9,7 +9,7 @@ import UIKit
 import XCTest
 @testable import TongoNews
 
-class LoginViewTests: XCTestCase {
+final class LoginViewTests: XCTestCase {
     
     final class SeamLoginView: LoginView {
         
