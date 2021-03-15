@@ -27,6 +27,8 @@
 		0C94152825F054B6001C06A4 /* AnyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94152725F054B6001C06A4 /* AnyCoordinator.swift */; };
 		0C94153025F05C83001C06A4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94152F25F05C83001C06A4 /* LoginView.swift */; };
 		0C94153525F05CD7001C06A4 /* LoginViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94153425F05CD7001C06A4 /* LoginViewTests.swift */; };
+		0CAAA18625FFBB5D001A419D /* LoginEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAA18525FFBB5D001A419D /* LoginEntityTests.swift */; };
+		0CAAA18B25FFBBC1001A419D /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAA18A25FFBBC1001A419D /* LoginEntity.swift */; };
 		0CC4AB0B25F900A60051C43A /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC4AB0A25F900A60051C43A /* ViewType.swift */; };
 		0CDFE63925F0428F00975A39 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDFE63825F0428F00975A39 /* LoginViewControllerTests.swift */; };
 		0CDFE64225F042D800975A39 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDFE64125F042D800975A39 /* LoginViewController.swift */; };
@@ -76,6 +78,8 @@
 		0C94152725F054B6001C06A4 /* AnyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCoordinator.swift; sourceTree = "<group>"; };
 		0C94152F25F05C83001C06A4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0C94153425F05CD7001C06A4 /* LoginViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewTests.swift; sourceTree = "<group>"; };
+		0CAAA18525FFBB5D001A419D /* LoginEntityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntityTests.swift; sourceTree = "<group>"; };
+		0CAAA18A25FFBBC1001A419D /* LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
 		0CC4AB0A25F900A60051C43A /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 		0CDFE63825F0428F00975A39 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		0CDFE64125F042D800975A39 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +250,7 @@
 			children = (
 				0C94153425F05CD7001C06A4 /* LoginViewTests.swift */,
 				0CDFE63825F0428F00975A39 /* LoginViewControllerTests.swift */,
+				0CAAA18525FFBB5D001A419D /* LoginEntityTests.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 			children = (
 				0CDFE64125F042D800975A39 /* LoginViewController.swift */,
 				0C94152F25F05C83001C06A4 /* LoginView.swift */,
+				0CAAA18A25FFBBC1001A419D /* LoginEntity.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -427,6 +433,7 @@
 				0C5F0A7B25EE9D9C00D4AC8A /* CoordinatorType.swift in Sources */,
 				0C5F0A9325EEA5A400D4AC8A /* CoordinatorError.swift in Sources */,
 				0C94152825F054B6001C06A4 /* AnyCoordinator.swift in Sources */,
+				0CAAA18B25FFBBC1001A419D /* LoginEntity.swift in Sources */,
 				0C0AD32425F7ADA700B4ED40 /* Theme.swift in Sources */,
 				0C1B546E25ED928A00625783 /* AuthCoordinator.swift in Sources */,
 				0C5F0A7225EE9D8000D4AC8A /* Routable.swift in Sources */,
@@ -444,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C1B548625ED95C900625783 /* FakeViewController.swift in Sources */,
+				0CAAA18625FFBB5D001A419D /* LoginEntityTests.swift in Sources */,
 				0C1B547E25ED951700625783 /* FakeAuthCoordinator.swift in Sources */,
 				0C5F0A6B25EE93F100D4AC8A /* AuthCoordinatorTests.swift in Sources */,
 				0CDFE63925F0428F00975A39 /* LoginViewControllerTests.swift in Sources */,

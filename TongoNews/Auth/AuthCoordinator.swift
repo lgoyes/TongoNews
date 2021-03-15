@@ -19,6 +19,6 @@ final class AuthCoordinator: AnyCoordinator<AuthCoordinator.Node>, AuthCoordinat
     override init(navigationController: UINavigationController) {
         super.init(navigationController: navigationController)
         self.currentNode = .login
-        nodeManager = [.login:LoginViewController()]
+        nodeManager = [.login:LoginViewController(entity: LoginEntity())]
     }
 }

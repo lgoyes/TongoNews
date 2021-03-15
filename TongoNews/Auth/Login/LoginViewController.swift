@@ -7,12 +7,43 @@
 
 import UIKit
 
-protocol LoginControllerType {
-    
+protocol LoginControllerType: AnyObject {
+    func getEmail() -> String?
+    func getPassword() -> String?
 }
 
 final class LoginViewController: UIViewController, LoginControllerType {
+
+    let viewType: ViewType.Type
+    let entity: LoginEntityType
+    
+    init(entity: LoginEntityType, viewType: ViewType.Type = LoginView.self) {
+        self.viewType = viewType
+        self.entity = entity
+        super.init(nibName: nil, bundle: nil)
+        self.entity.setViewController(self)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("This method should not be called")
+    }
+    
     override func loadView() {
-        self.view = LoginView.getInstance()
+        self.view = viewType.getInstance()
+        (self.view as? LoginViewType)?.setDelegate(self)
+    }
+    
+    func getEmail() -> String? {
+        fatalError()
+    }
+    
+    func getPassword() -> String? {
+        fatalError()
+    }
+}
+
+extension LoginViewController: LoginViewDelegate {
+    func onLoginButtonPressed() {
+        entity.onLoginButtonPressed()
     }
 }
