@@ -9,6 +9,10 @@ import UIKit
 
 protocol LoginViewType: ViewType {
     func setDelegate(_ delegate: LoginViewDelegate)
+    func getEmailFieldText() -> String?
+    func getPasswordFieldText() -> String?
+    func setEmailFieldColor(_ themeColor: UIColor?)
+    func setPasswordFieldColor(_ themeColor: UIColor?)
 }
 
 protocol LoginViewDelegate: AnyObject {
@@ -48,6 +52,22 @@ class LoginView: UIView, LoginViewType {
         setMainContainer()
         configureTopContainerStackView(in: mainStackView)
         configureLoginButton(in: mainStackView)
+    }
+    
+    func getEmailFieldText() -> String? {
+        return emailField.text
+    }
+    
+    func getPasswordFieldText() -> String? {
+        return passwordField.text
+    }
+    
+    func setEmailFieldColor(_ themeColor: UIColor?) {
+        emailField.backgroundColor = themeColor
+    }
+    
+    func setPasswordFieldColor(_ themeColor: UIColor?) {
+        passwordField.backgroundColor = themeColor
     }
     
     func setMainContainer() {
@@ -93,7 +113,7 @@ class LoginView: UIView, LoginViewType {
         
         self.emailField = UITextField()
         emailField.placeholder = Constant.emailPlaceholder
-        emailField.backgroundColor = Theme.Color.textFieldBackground
+        emailField.backgroundColor = Theme.Color.TextField.defaultColor
         
         addView(emailField, to: topContainerStack)
     }
@@ -103,7 +123,7 @@ class LoginView: UIView, LoginViewType {
         
         self.passwordField = UITextField()
         passwordField.placeholder = Constant.passwordPlaceholder
-        passwordField.backgroundColor = Theme.Color.textFieldBackground
+        passwordField.backgroundColor = Theme.Color.TextField.defaultColor
         
         addView(passwordField, to: topContainerStack)
     }

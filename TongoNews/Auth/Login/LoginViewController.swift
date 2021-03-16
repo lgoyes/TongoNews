@@ -16,7 +16,7 @@ protocol LoginControllerType: AnyObject {
     func hidePasswordError()
 }
 
-final class LoginViewController: UIViewController, LoginControllerType {
+class LoginViewController: UIViewController, LoginControllerType {
 
     let viewType: ViewType.Type
     let entity: LoginEntityType
@@ -38,27 +38,27 @@ final class LoginViewController: UIViewController, LoginControllerType {
     }
     
     func getEmail() -> String? {
-        fatalError()
+        (self.view as? LoginViewType)?.getEmailFieldText()
     }
     
     func getPassword() -> String? {
-        fatalError()
+        (self.view as? LoginViewType)?.getPasswordFieldText()
     }
     
     func showEmailError() {
-        fatalError()
+        (self.view as? LoginViewType)?.setEmailFieldColor(Theme.Color.TextField.error)
     }
     
     func hideEmailError() {
-        fatalError()
+        (self.view as? LoginViewType)?.setEmailFieldColor(Theme.Color.TextField.defaultColor)
     }
     
     func showPasswordError() {
-        fatalError()
+        (self.view as? LoginViewType)?.setPasswordFieldColor(Theme.Color.TextField.error)
     }
     
     func hidePasswordError() {
-        fatalError()
+        (self.view as? LoginViewType)?.setPasswordFieldColor(Theme.Color.TextField.defaultColor)
     }
 }
 

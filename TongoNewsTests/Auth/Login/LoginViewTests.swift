@@ -183,7 +183,7 @@ final class LoginViewTests: XCTestCase {
         let topStackView = UIStackView()
         sut.configureEmailField(in: topStackView)
         let emailField = sut.emailField!
-        XCTAssertEqual(emailField.backgroundColor?.accessibilityName, Theme.Color.textFieldBackground.accessibilityName)
+        XCTAssertEqual(emailField.backgroundColor?.accessibilityName, Theme.Color.TextField.defaultColor.accessibilityName)
     }
     
     func test_GivenConfigureEmailFieldWasInvoked_WhenConfigurePasswordField_SetPlaceHolderToPasswordField() {
@@ -201,7 +201,7 @@ final class LoginViewTests: XCTestCase {
         
         sut.configurePasswordField(in: topStackView)
         let passwordField = sut.passwordField!
-        XCTAssertEqual(passwordField.backgroundColor?.accessibilityName, Theme.Color.textFieldBackground.accessibilityName)
+        XCTAssertEqual(passwordField.backgroundColor?.accessibilityName, Theme.Color.TextField.defaultColor.accessibilityName)
     }
     
     func test_WhenGetInstanceIsCalled_ThenShouldReturnALoginViewInstance() {
@@ -252,5 +252,25 @@ final class LoginViewTests: XCTestCase {
         sut.loginButton.sendActions(for: .touchUpInside)
         
         XCTAssertTrue(fakeDelegate.loginButtonPressed)
+    }
+    
+    func test_GivenSubviewsAreConfigured_WhenSetEmailFieldColor_SetBackgroundColorToEmailField() {
+        sut.configureSubviews()
+        sut.setEmailFieldColor(nil)
+        
+        let expectedColor = UIColor.white
+        sut.setEmailFieldColor(expectedColor)
+        
+        XCTAssertEqual(sut.emailField.backgroundColor?.accessibilityName, expectedColor.accessibilityName)
+    }
+    
+    func test_GivenSubviewsAreConfigured_WhenSetPasswordFieldColor_SetBackgroundColorToPasswordField() {
+        sut.configureSubviews()
+        sut.setPasswordFieldColor(nil)
+        
+        let expectedColor = UIColor.white
+        sut.setPasswordFieldColor(expectedColor)
+        
+        XCTAssertEqual(sut.passwordField.backgroundColor?.accessibilityName, expectedColor.accessibilityName)
     }
 }
