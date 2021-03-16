@@ -12,7 +12,8 @@ protocol LoginEntityType {
     func onLoginButtonPressed()
 }
 
-final class LoginEntity: LoginEntityType {
+class LoginEntity: LoginEntityType {
+    
     weak var viewController: LoginControllerType!
     
     func setViewController(_ viewController: LoginControllerType) {
@@ -20,10 +21,44 @@ final class LoginEntity: LoginEntityType {
     }
     
     func onLoginButtonPressed() {
+        let _ = validateForm()
+    }
+    
+    func validateForm() -> Bool {
+        let emailValid = validateEmailField()
+        if (emailValid) {
+            viewController.hideEmailError()
+        } else {
+            viewController.showEmailError()
+        }
+        
+        let passwordValid = validatePasswordField()
+        if (passwordValid) {
+            viewController.hidePasswordError()
+        } else {
+            viewController.showPasswordError()
+        }
+        
+        return emailValid && passwordValid
+    }
+    
+    func validateEmailField() -> Bool {
         assert(viewController != nil)
         
-        let email = viewController.getEmail()
-        let password = viewController.getPassword()
+        guard let email = viewController.getEmail() else {
+            return false
+        }
         
+        return Regex.Predicate.email.evaluate(with: email)
+    }
+    
+    func validatePasswordField() -> Bool {
+        assert(viewController != nil)
+        
+        guard let password = viewController.getPassword() else {
+            return false
+        }
+        
+        return Regex.Predicate.password.evaluate(with: password)
     }
 }

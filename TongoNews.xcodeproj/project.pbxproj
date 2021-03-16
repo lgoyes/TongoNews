@@ -24,6 +24,7 @@
 		0C5F0A7B25EE9D9C00D4AC8A /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0A7A25EE9D9C00D4AC8A /* CoordinatorType.swift */; };
 		0C5F0A8325EE9DF400D4AC8A /* UIViewController+Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0A8225EE9DF400D4AC8A /* UIViewController+Routable.swift */; };
 		0C5F0A9325EEA5A400D4AC8A /* CoordinatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0A9225EEA5A400D4AC8A /* CoordinatorError.swift */; };
+		0C922328260140600087DB18 /* RegexPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C922327260140600087DB18 /* RegexPattern.swift */; };
 		0C94152825F054B6001C06A4 /* AnyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94152725F054B6001C06A4 /* AnyCoordinator.swift */; };
 		0C94153025F05C83001C06A4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94152F25F05C83001C06A4 /* LoginView.swift */; };
 		0C94153525F05CD7001C06A4 /* LoginViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94153425F05CD7001C06A4 /* LoginViewTests.swift */; };
@@ -75,6 +76,7 @@
 		0C5F0A7A25EE9D9C00D4AC8A /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
 		0C5F0A8225EE9DF400D4AC8A /* UIViewController+Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Routable.swift"; sourceTree = "<group>"; };
 		0C5F0A9225EEA5A400D4AC8A /* CoordinatorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorError.swift; sourceTree = "<group>"; };
+		0C922327260140600087DB18 /* RegexPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexPattern.swift; sourceTree = "<group>"; };
 		0C94152725F054B6001C06A4 /* AnyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCoordinator.swift; sourceTree = "<group>"; };
 		0C94152F25F05C83001C06A4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0C94153425F05CD7001C06A4 /* LoginViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewTests.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				0C0AD32325F7ADA700B4ED40 /* Theme.swift */,
+				0C922327260140600087DB18 /* RegexPattern.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CC4AB0B25F900A60051C43A /* ViewType.swift in Sources */,
+				0C922328260140600087DB18 /* RegexPattern.swift in Sources */,
 				0C5F0A8325EE9DF400D4AC8A /* UIViewController+Routable.swift in Sources */,
 				0C5F0A7B25EE9D9C00D4AC8A /* CoordinatorType.swift in Sources */,
 				0C5F0A9325EEA5A400D4AC8A /* CoordinatorError.swift in Sources */,

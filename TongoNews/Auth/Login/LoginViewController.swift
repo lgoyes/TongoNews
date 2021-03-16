@@ -10,6 +10,10 @@ import UIKit
 protocol LoginControllerType: AnyObject {
     func getEmail() -> String?
     func getPassword() -> String?
+    func showEmailError()
+    func hideEmailError()
+    func showPasswordError()
+    func hidePasswordError()
 }
 
 final class LoginViewController: UIViewController, LoginControllerType {
@@ -38,6 +42,22 @@ final class LoginViewController: UIViewController, LoginControllerType {
     }
     
     func getPassword() -> String? {
+        fatalError()
+    }
+    
+    func showEmailError() {
+        fatalError()
+    }
+    
+    func hideEmailError() {
+        fatalError()
+    }
+    
+    func showPasswordError() {
+        fatalError()
+    }
+    
+    func hidePasswordError() {
         fatalError()
     }
 }
