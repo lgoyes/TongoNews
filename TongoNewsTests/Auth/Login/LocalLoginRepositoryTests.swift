@@ -1,5 +1,5 @@
 //
-//  LoginRepositoryTests.swift
+//  LocalLoginRepositoryTests.swift
 //  TongoNewsTests
 //
 //  Created by Luis Goyes Garces on 17/03/21.
@@ -8,12 +8,12 @@
 import XCTest
 @testable import TongoNews
 
-final class LoginRepositoryTests: XCTestCase {
+final class LocalLoginRepositoryTests: XCTestCase {
     var sut: LoginRepositoryType!
     
     override func setUpWithError() throws {
         try super.setUpWithError()
-        sut = LoginRepository()
+        sut = LocalLoginRepository()
     }
     
     override func tearDownWithError() throws {
