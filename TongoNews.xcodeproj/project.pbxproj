@@ -29,6 +29,11 @@
 		0C94153525F05CD7001C06A4 /* LoginViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94153425F05CD7001C06A4 /* LoginViewTests.swift */; };
 		0CAAA18625FFBB5D001A419D /* LoginEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAA18525FFBB5D001A419D /* LoginEntityTests.swift */; };
 		0CAAA18B25FFBBC1001A419D /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAA18A25FFBBC1001A419D /* LoginEntity.swift */; };
+		0CB193FA2602530B006AA6B4 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB193F92602530B006AA6B4 /* LoginRepository.swift */; };
+		0CB193FF26025320006AA6B4 /* LoginRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB193FE26025320006AA6B4 /* LoginRepositoryType.swift */; };
+		0CB194042602533C006AA6B4 /* LoginRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB194032602533C006AA6B4 /* LoginRepositoryTests.swift */; };
+		0CB194092602551D006AA6B4 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB194082602551D006AA6B4 /* LoginResponse.swift */; };
+		0CB1940E2602593C006AA6B4 /* SystemConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB1940D2602593C006AA6B4 /* SystemConfig.swift */; };
 		0CC4AB0B25F900A60051C43A /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC4AB0A25F900A60051C43A /* ViewType.swift */; };
 		0CDFE63925F0428F00975A39 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDFE63825F0428F00975A39 /* LoginViewControllerTests.swift */; };
 		0CDFE64225F042D800975A39 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDFE64125F042D800975A39 /* LoginViewController.swift */; };
@@ -80,6 +85,11 @@
 		0C94153425F05CD7001C06A4 /* LoginViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewTests.swift; sourceTree = "<group>"; };
 		0CAAA18525FFBB5D001A419D /* LoginEntityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntityTests.swift; sourceTree = "<group>"; };
 		0CAAA18A25FFBBC1001A419D /* LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
+		0CB193F92602530B006AA6B4 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		0CB193FE26025320006AA6B4 /* LoginRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryType.swift; sourceTree = "<group>"; };
+		0CB194032602533C006AA6B4 /* LoginRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryTests.swift; sourceTree = "<group>"; };
+		0CB194082602551D006AA6B4 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		0CB1940D2602593C006AA6B4 /* SystemConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemConfig.swift; sourceTree = "<group>"; };
 		0CC4AB0A25F900A60051C43A /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 		0CDFE63825F0428F00975A39 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		0CDFE64125F042D800975A39 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +170,7 @@
 				0C1B53FB25ED7D3500625783 /* LaunchScreen.storyboard */,
 				0C1B53FE25ED7D3500625783 /* Info.plist */,
 				0C1B53F625ED7D3400625783 /* TongoNews.xcdatamodeld */,
+				0CB1940D2602593C006AA6B4 /* SystemConfig.swift */,
 			);
 			path = TongoNews;
 			sourceTree = "<group>";
@@ -248,6 +259,23 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		0CB193EC26025294006AA6B4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				0CB193FE26025320006AA6B4 /* LoginRepositoryType.swift */,
+				0CB194082602551D006AA6B4 /* LoginResponse.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		0CB193F5260252EE006AA6B4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0CB193F92602530B006AA6B4 /* LoginRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		0CC4AB0925F9009C0051C43A /* ViewType */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +290,7 @@
 				0C94153425F05CD7001C06A4 /* LoginViewTests.swift */,
 				0CDFE63825F0428F00975A39 /* LoginViewControllerTests.swift */,
 				0CAAA18525FFBB5D001A419D /* LoginEntityTests.swift */,
+				0CB194032602533C006AA6B4 /* LoginRepositoryTests.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -294,6 +323,8 @@
 		0CDFE64025F042BF00975A39 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				0CB193F5260252EE006AA6B4 /* Data */,
+				0CB193EC26025294006AA6B4 /* Domain */,
 				0CB193E826025278006AA6B4 /* Presentation */,
 			);
 			path = Login;
@@ -428,18 +459,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CB1940E2602593C006AA6B4 /* SystemConfig.swift in Sources */,
 				0CC4AB0B25F900A60051C43A /* ViewType.swift in Sources */,
 				0C922328260140600087DB18 /* RegexPattern.swift in Sources */,
 				0C5F0A8325EE9DF400D4AC8A /* UIViewController+Routable.swift in Sources */,
 				0C5F0A7B25EE9D9C00D4AC8A /* CoordinatorType.swift in Sources */,
 				0C5F0A9325EEA5A400D4AC8A /* CoordinatorError.swift in Sources */,
 				0C94152825F054B6001C06A4 /* AnyCoordinator.swift in Sources */,
+				0CB194092602551D006AA6B4 /* LoginResponse.swift in Sources */,
 				0CAAA18B25FFBBC1001A419D /* LoginEntity.swift in Sources */,
+				0CB193FA2602530B006AA6B4 /* LoginRepository.swift in Sources */,
 				0C0AD32425F7ADA700B4ED40 /* Theme.swift in Sources */,
 				0C1B546E25ED928A00625783 /* AuthCoordinator.swift in Sources */,
 				0C5F0A7225EE9D8000D4AC8A /* Routable.swift in Sources */,
 				0C94153025F05C83001C06A4 /* LoginView.swift in Sources */,
 				0C1B543B25ED80BD00625783 /* ApplicationCoordinator.swift in Sources */,
+				0CB193FF26025320006AA6B4 /* LoginRepositoryType.swift in Sources */,
 				0C1B53EE25ED7D3400625783 /* AppDelegate.swift in Sources */,
 				0C1B53F825ED7D3400625783 /* TongoNews.xcdatamodeld in Sources */,
 				0CDFE64225F042D800975A39 /* LoginViewController.swift in Sources */,
@@ -455,6 +490,7 @@
 				0CAAA18625FFBB5D001A419D /* LoginEntityTests.swift in Sources */,
 				0C5F0A6B25EE93F100D4AC8A /* AuthCoordinatorTests.swift in Sources */,
 				0CDFE63925F0428F00975A39 /* LoginViewControllerTests.swift in Sources */,
+				0CB194042602533C006AA6B4 /* LoginRepositoryTests.swift in Sources */,
 				0C94153525F05CD7001C06A4 /* LoginViewTests.swift in Sources */,
 				0C1B545D25ED83FD00625783 /* ApplicationCoordinatorTests.swift in Sources */,
 			);
@@ -605,6 +641,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;

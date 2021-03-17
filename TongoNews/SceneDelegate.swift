@@ -8,14 +8,14 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
     var window: UIWindow?
     
     lazy var applicationCoordinator: AnyCoordinator<ApplicationCoordinator.Node> = {
         let coordinator = ApplicationCoordinator(navigationController: UINavigationController())
         return coordinator
     }()
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else {
             return
@@ -31,14 +31,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             try applicationCoordinator.start()
         } catch {
             #if DEBUG
-                if !isTestRunning() {
-                    assertionFailure(error.localizedDescription)
-                }
+            if !isTestRunning() {
+                assertionFailure(error.localizedDescription)
+            }
             #endif
         }
     }
     
     private func isTestRunning() -> Bool {
-        return ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
+        return SystemConfig.current == .test
     }
 }
