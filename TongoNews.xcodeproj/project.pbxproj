@@ -238,6 +238,16 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		0CB193E826025278006AA6B4 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				0CDFE64125F042D800975A39 /* LoginViewController.swift */,
+				0C94152F25F05C83001C06A4 /* LoginView.swift */,
+				0CAAA18A25FFBBC1001A419D /* LoginEntity.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		0CC4AB0925F9009C0051C43A /* ViewType */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,9 +294,7 @@
 		0CDFE64025F042BF00975A39 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				0CDFE64125F042D800975A39 /* LoginViewController.swift */,
-				0C94152F25F05C83001C06A4 /* LoginView.swift */,
-				0CAAA18A25FFBBC1001A419D /* LoginEntity.swift */,
+				0CB193E826025278006AA6B4 /* Presentation */,
 			);
 			path = Login;
 			sourceTree = "<group>";
