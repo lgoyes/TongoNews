@@ -124,6 +124,7 @@ class LoginView: UIView, LoginViewType {
         self.passwordField = UITextField()
         passwordField.placeholder = Constant.passwordPlaceholder
         passwordField.backgroundColor = Theme.Color.TextField.defaultColor
+        passwordField.isSecureTextEntry = true
         
         addView(passwordField, to: topContainerStack)
     }

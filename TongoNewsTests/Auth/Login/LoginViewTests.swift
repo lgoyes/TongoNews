@@ -204,6 +204,15 @@ final class LoginViewTests: XCTestCase {
         XCTAssertEqual(passwordField.backgroundColor?.accessibilityName, Theme.Color.TextField.defaultColor.accessibilityName)
     }
     
+    func test_GivenConfigureEmailFieldWasInvoked_WhenConfigurePasswordField_ThenMakePasswordASecureTextEntry() {
+        let topStackView = UIStackView()
+        sut.configureEmailField(in: topStackView)
+        
+        sut.configurePasswordField(in: topStackView)
+        let passwordField = sut.passwordField!
+        XCTAssertTrue(passwordField.isSecureTextEntry)
+    }
+    
     func test_WhenGetInstanceIsCalled_ThenShouldReturnALoginViewInstance() {
         let sut = LoginView.getInstance()
         XCTAssertNotNil(sut)
