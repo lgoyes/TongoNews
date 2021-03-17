@@ -10,8 +10,8 @@ import XCTest
 
 class ApplicationCoordinatorTests: XCTestCase {
     
-    var sut: AnyCoordinator<ApplicationCoordinator.Node>!
-    var fakeAuthCoordinator: FakeAuthCoordinator!
+    private var sut: AnyCoordinator<ApplicationCoordinator.Node>!
+    private var fakeAuthCoordinator: FakeAuthCoordinator!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -70,5 +70,35 @@ class ApplicationCoordinatorTests: XCTestCase {
         sutImplementation.nodeManager[.auth] = nil
         
         XCTAssertThrowsError(try sut.start())
+    }
+}
+
+fileprivate final class FakeAuthCoordinator: AnyCoordinator<AuthCoordinator.Node> {
+    
+    lazy var currentViewController: UIViewController = {
+        return FakeViewController()
+    }()
+    
+    init() {
+        super.init(navigationController: UINavigationController())
+    }
+    
+    private var startCalled = false
+    private var nodes: [AuthCoordinator.Node: Routable] = [:]
+    
+    override func start() throws {
+        startCalled = true
+    }
+    
+    override func setNode(node: AuthCoordinator.Node, routable: Routable) throws {
+        nodes[node] = routable
+    }
+    
+    func wasStartCalled() -> Bool {
+        return startCalled
+    }
+    
+    func getRoutable(for node: AuthCoordinator.Node) -> Routable? {
+        return nodes[node]
     }
 }

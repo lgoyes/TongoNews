@@ -10,55 +10,8 @@ import XCTest
 
 final class LoginEntityTests: XCTestCase {
     
-    final class MockLoginViewController: LoginControllerType {
-        var email: String?
-        var password: String?
-        
-        var getEmailWasCalled = false
-        var getPasswordWasCalled = false
-        var showEmailErrorWasCalled = false
-        var hideEmailErrorWasCalled = false
-        var showPasswordErrorWasCalled = false
-        var hidePasswordErrorWasCalled = false
-        
-        func getEmail() -> String? {
-            getEmailWasCalled = true
-            return email
-        }
-        
-        func getPassword() -> String? {
-            getPasswordWasCalled = true
-            return password
-        }
-        
-        func showEmailError() {
-            showEmailErrorWasCalled = true
-        }
-        
-        func hideEmailError() {
-            hideEmailErrorWasCalled = true
-        }
-        
-        func showPasswordError() {
-            showPasswordErrorWasCalled = true
-        }
-        
-        func hidePasswordError() {
-            hidePasswordErrorWasCalled = true
-        }
-    }
-    
-    final class SeamLoginEntity: LoginEntity {
-        var validateFormWasCalled = false
-        
-        override func validateForm() -> Bool {
-            validateFormWasCalled = true
-            return super.validateForm()
-        }
-    }
-    
-    var mockViewController: MockLoginViewController!
-    var sut: LoginEntityType!
+    private var mockViewController: MockLoginViewController!
+    private var sut: LoginEntityType!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -213,5 +166,56 @@ final class LoginEntityTests: XCTestCase {
         sut.onLoginButtonPressed()
         
         XCTAssertTrue(sut.validateFormWasCalled)
+    }
+    
+//    func test_WhenPerformLoginIsCalled_ThenExecuteLoginInteractor() {
+//
+//    }
+}
+
+fileprivate final class MockLoginViewController: LoginControllerType {
+    var email: String?
+    var password: String?
+    
+    var getEmailWasCalled = false
+    var getPasswordWasCalled = false
+    var showEmailErrorWasCalled = false
+    var hideEmailErrorWasCalled = false
+    var showPasswordErrorWasCalled = false
+    var hidePasswordErrorWasCalled = false
+    
+    func getEmail() -> String? {
+        getEmailWasCalled = true
+        return email
+    }
+    
+    func getPassword() -> String? {
+        getPasswordWasCalled = true
+        return password
+    }
+    
+    func showEmailError() {
+        showEmailErrorWasCalled = true
+    }
+    
+    func hideEmailError() {
+        hideEmailErrorWasCalled = true
+    }
+    
+    func showPasswordError() {
+        showPasswordErrorWasCalled = true
+    }
+    
+    func hidePasswordError() {
+        hidePasswordErrorWasCalled = true
+    }
+}
+
+fileprivate final class SeamLoginEntity: LoginEntity {
+    var validateFormWasCalled = false
+    
+    override func validateForm() -> Bool {
+        validateFormWasCalled = true
+        return super.validateForm()
     }
 }

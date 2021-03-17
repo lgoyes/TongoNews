@@ -42,6 +42,10 @@ class LoginEntity: LoginEntityType {
         return emailValid && passwordValid
     }
     
+    func performLogin() {
+        
+    }
+    
     func validateEmailField() -> Bool {
         assert(viewController != nil)
         

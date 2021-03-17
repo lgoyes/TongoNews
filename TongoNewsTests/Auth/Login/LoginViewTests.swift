@@ -11,26 +11,7 @@ import XCTest
 
 final class LoginViewTests: XCTestCase {
     
-    final class SeamLoginView: LoginView {
-        
-        var configureSubviewsWasCalled = false
-        
-        override func configureSubviews() {
-            super.configureSubviews()
-            configureSubviewsWasCalled = true
-        }
-    }
-    
-    final class FakeLoginViewDelegate: LoginViewDelegate {
-        
-        var loginButtonPressed = false
-        
-        func onLoginButtonPressed() {
-            loginButtonPressed = true
-        }
-    }
-    
-    var sut: LoginView!
+    private var sut: LoginView!
     
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -281,5 +262,24 @@ final class LoginViewTests: XCTestCase {
         sut.setPasswordFieldColor(expectedColor)
         
         XCTAssertEqual(sut.passwordField.backgroundColor?.accessibilityName, expectedColor.accessibilityName)
+    }
+}
+
+fileprivate final class SeamLoginView: LoginView {
+    
+    var configureSubviewsWasCalled = false
+    
+    override func configureSubviews() {
+        super.configureSubviews()
+        configureSubviewsWasCalled = true
+    }
+}
+
+fileprivate final class FakeLoginViewDelegate: LoginViewDelegate {
+    
+    var loginButtonPressed = false
+    
+    func onLoginButtonPressed() {
+        loginButtonPressed = true
     }
 }

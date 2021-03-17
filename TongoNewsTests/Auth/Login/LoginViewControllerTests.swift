@@ -8,57 +8,10 @@
 import XCTest
 @testable import TongoNews
 
-class LoginViewControllerTests: XCTestCase {
+final class LoginViewControllerTests: XCTestCase {
     
-    final class FakeLoginView: UIView, LoginViewType {
-        
-        weak var delegate: LoginViewDelegate?
-        var emailFieldText: String?
-        var passwordFieldText: String?
-        var emailFieldBackgroundColor: UIColor?
-        var passwordFieldBackgroundColor: UIColor?
-        var getEmailFieldTextWasCalled = false
-        var getPasswordFieldTextWasCalled = false
-        
-        func setDelegate(_ delegate: LoginViewDelegate) {
-            self.delegate = delegate
-        }
-        func configureSubviews() {}
-        func getEmailFieldText() -> String? {
-            getEmailFieldTextWasCalled = true
-            return emailFieldText
-        }
-        
-        func getPasswordFieldText() -> String? {
-            getPasswordFieldTextWasCalled = true
-            return passwordFieldText
-        }
-        
-        func setEmailFieldColor(_ themeColor: UIColor?) {
-            emailFieldBackgroundColor = themeColor
-        }
-        
-        func setPasswordFieldColor(_ themeColor: UIColor?) {
-            passwordFieldBackgroundColor = themeColor
-        }
-    }
-    
-    final class FakeLoginEntity: LoginEntityType {
-        
-        weak var viewController: LoginControllerType!
-        var onLoginButtonPressedInvoked = false
-        
-        func onLoginButtonPressed() {
-            onLoginButtonPressedInvoked = true
-        }
-        
-        func setViewController(_ viewController: LoginControllerType) {
-            self.viewController = viewController
-        }
-    }
-    
-    var fakeEntity: FakeLoginEntity!
-    var sut: LoginControllerType!
+    private var fakeEntity: FakeLoginEntity!
+    private var sut: LoginControllerType!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -154,5 +107,52 @@ class LoginViewControllerTests: XCTestCase {
         sut.hidePasswordError()
         
         XCTAssertEqual(fakeView.passwordFieldBackgroundColor?.accessibilityName, Theme.Color.TextField.defaultColor.accessibilityName)
+    }
+}
+
+fileprivate final class FakeLoginView: UIView, LoginViewType {
+    
+    weak var delegate: LoginViewDelegate?
+    var emailFieldText: String?
+    var passwordFieldText: String?
+    var emailFieldBackgroundColor: UIColor?
+    var passwordFieldBackgroundColor: UIColor?
+    var getEmailFieldTextWasCalled = false
+    var getPasswordFieldTextWasCalled = false
+    
+    func setDelegate(_ delegate: LoginViewDelegate) {
+        self.delegate = delegate
+    }
+    func configureSubviews() {}
+    func getEmailFieldText() -> String? {
+        getEmailFieldTextWasCalled = true
+        return emailFieldText
+    }
+    
+    func getPasswordFieldText() -> String? {
+        getPasswordFieldTextWasCalled = true
+        return passwordFieldText
+    }
+    
+    func setEmailFieldColor(_ themeColor: UIColor?) {
+        emailFieldBackgroundColor = themeColor
+    }
+    
+    func setPasswordFieldColor(_ themeColor: UIColor?) {
+        passwordFieldBackgroundColor = themeColor
+    }
+}
+
+fileprivate final class FakeLoginEntity: LoginEntityType {
+    
+    weak var viewController: LoginControllerType!
+    var onLoginButtonPressedInvoked = false
+    
+    func onLoginButtonPressed() {
+        onLoginButtonPressedInvoked = true
+    }
+    
+    func setViewController(_ viewController: LoginControllerType) {
+        self.viewController = viewController
     }
 }

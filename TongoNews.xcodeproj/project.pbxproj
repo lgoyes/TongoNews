@@ -17,7 +17,6 @@
 		0C1B543B25ED80BD00625783 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B543A25ED80BD00625783 /* ApplicationCoordinator.swift */; };
 		0C1B545D25ED83FD00625783 /* ApplicationCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B545C25ED83FD00625783 /* ApplicationCoordinatorTests.swift */; };
 		0C1B546E25ED928A00625783 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B546D25ED928A00625783 /* AuthCoordinator.swift */; };
-		0C1B547E25ED951700625783 /* FakeAuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B547D25ED951700625783 /* FakeAuthCoordinator.swift */; };
 		0C1B548625ED95C900625783 /* FakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B548525ED95C900625783 /* FakeViewController.swift */; };
 		0C5F0A6B25EE93F100D4AC8A /* AuthCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0A6A25EE93F100D4AC8A /* AuthCoordinatorTests.swift */; };
 		0C5F0A7225EE9D8000D4AC8A /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5F0A7125EE9D8000D4AC8A /* Routable.swift */; };
@@ -69,7 +68,6 @@
 		0C1B543A25ED80BD00625783 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		0C1B545C25ED83FD00625783 /* ApplicationCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinatorTests.swift; sourceTree = "<group>"; };
 		0C1B546D25ED928A00625783 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
-		0C1B547D25ED951700625783 /* FakeAuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeAuthCoordinator.swift; sourceTree = "<group>"; };
 		0C1B548525ED95C900625783 /* FakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeViewController.swift; sourceTree = "<group>"; };
 		0C5F0A6A25EE93F100D4AC8A /* AuthCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinatorTests.swift; sourceTree = "<group>"; };
 		0C5F0A7125EE9D8000D4AC8A /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
@@ -258,14 +256,6 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		0CC4AB1325F908BD0051C43A /* Fakes */ = {
-			isa = PBXGroup;
-			children = (
-				0C1B547D25ED951700625783 /* FakeAuthCoordinator.swift */,
-			);
-			path = Fakes;
-			sourceTree = "<group>";
-		};
 		0CC4AB1425F908CC0051C43A /* General */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,7 +275,6 @@
 		0CDFE62525F041D600975A39 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				0CC4AB1325F908BD0051C43A /* Fakes */,
 				0CC4AB0F25F908840051C43A /* Login */,
 				0C5F0A6A25EE93F100D4AC8A /* AuthCoordinatorTests.swift */,
 			);
@@ -456,7 +445,6 @@
 			files = (
 				0C1B548625ED95C900625783 /* FakeViewController.swift in Sources */,
 				0CAAA18625FFBB5D001A419D /* LoginEntityTests.swift in Sources */,
-				0C1B547E25ED951700625783 /* FakeAuthCoordinator.swift in Sources */,
 				0C5F0A6B25EE93F100D4AC8A /* AuthCoordinatorTests.swift in Sources */,
 				0CDFE63925F0428F00975A39 /* LoginViewControllerTests.swift in Sources */,
 				0C94153525F05CD7001C06A4 /* LoginViewTests.swift in Sources */,
