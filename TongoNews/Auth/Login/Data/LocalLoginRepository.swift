@@ -10,6 +10,8 @@ class LocalLoginRepository: LoginRepositoryType {
         if credentials.email == "test@test.com" {
             let loginResponse = LoginResponse(authToken: "test@test.com", expiresIn: 3600)
             onSuccess(loginResponse)
+        } else if credentials.email == "networkerror@test.com" {
+            onError(.networkFailure)
         } else {
             onError(.invalidCredentials)
         }

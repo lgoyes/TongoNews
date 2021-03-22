@@ -37,7 +37,7 @@ final class LoginEntityTests: XCTestCase {
         XCTAssertTrue(sutImplementation.viewController === mockViewController)
     }
     
-    func test_WhenEmailFieldIsInvoked_ThenGetEmailFromViewController() {
+    func test_WhenValidateEmailFieldIsInvoked_ThenGetEmailFromViewController() {
         let sutImplementation = sut as! LoginEntity
         let _ = sutImplementation.validateEmailField()
         XCTAssertTrue(mockViewController.getEmailWasCalled)

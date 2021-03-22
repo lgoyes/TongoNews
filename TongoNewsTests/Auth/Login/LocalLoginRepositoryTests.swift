@@ -39,7 +39,21 @@ final class LocalLoginRepositoryTests: XCTestCase {
         failureExpectation.isInverted = true
         sut.login(with: LoginRepositoryType.Credentials(email: "invalid@test.com", password: "Password1"), onSuccess: { _ in
             failureExpectation.fulfill()
-        }, onError: { _ in
+        }, onError: { error in
+            XCTAssertEqual(error, LoginRepositoryError.invalidCredentials)
+            correctExpectation.fulfill()
+        })
+        wait(for: [correctExpectation, failureExpectation], timeout: 0.1)
+    }
+    
+    func test_WhenLoginWithNetworkErrorCredentials_CallOnErrorClosure() {
+        let correctExpectation = XCTestExpectation(description: "onError closure should be called")
+        let failureExpectation = XCTestExpectation(description: "onSuccess closure should be called")
+        failureExpectation.isInverted = true
+        sut.login(with: LoginRepositoryType.Credentials(email: "networkerror@test.com", password: "Password1"), onSuccess: { _ in
+            failureExpectation.fulfill()
+        }, onError: { error in
+            XCTAssertEqual(error, LoginRepositoryError.networkFailure)
             correctExpectation.fulfill()
         })
         wait(for: [correctExpectation, failureExpectation], timeout: 0.1)
