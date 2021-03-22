@@ -13,7 +13,7 @@ final class LocalLoginRepositoryTests: XCTestCase {
     
     override func setUpWithError() throws {
         try super.setUpWithError()
-        sut = LocalLoginRepository()
+        sut = LocalLoginRepository(directory: nil)
     }
     
     override func tearDownWithError() throws {
@@ -25,11 +25,13 @@ final class LocalLoginRepositoryTests: XCTestCase {
         let correctExpectation = XCTestExpectation(description: "onSuccess closure should be called")
         let failureExpectation = XCTestExpectation(description: "onError closure should be called")
         failureExpectation.isInverted = true
-        sut.login(with: LoginRepositoryType.Credentials(email: "test@test.com", password: "Password1"), onSuccess: { _ in
+        
+        sut.login(with: LoginRepositoryType.Credentials(email: TestSuccessCredentials.getEmail(), password: "Password1"), onSuccess: { _ in
             correctExpectation.fulfill()
         }, onError: { _ in
             failureExpectation.fulfill()
         })
+        
         wait(for: [correctExpectation, failureExpectation], timeout: 0.1)
     }
     
@@ -37,12 +39,14 @@ final class LocalLoginRepositoryTests: XCTestCase {
         let correctExpectation = XCTestExpectation(description: "onError closure should be called")
         let failureExpectation = XCTestExpectation(description: "onSuccess closure should be called")
         failureExpectation.isInverted = true
-        sut.login(with: LoginRepositoryType.Credentials(email: "invalid@test.com", password: "Password1"), onSuccess: { _ in
+        
+        sut.login(with: LoginRepositoryType.Credentials(email: InvalidErrorCredentials.getEmail(), password: "Password1"), onSuccess: { _ in
             failureExpectation.fulfill()
         }, onError: { error in
             XCTAssertEqual(error, LoginRepositoryError.invalidCredentials)
             correctExpectation.fulfill()
         })
+        
         wait(for: [correctExpectation, failureExpectation], timeout: 0.1)
     }
     
@@ -50,12 +54,14 @@ final class LocalLoginRepositoryTests: XCTestCase {
         let correctExpectation = XCTestExpectation(description: "onError closure should be called")
         let failureExpectation = XCTestExpectation(description: "onSuccess closure should be called")
         failureExpectation.isInverted = true
-        sut.login(with: LoginRepositoryType.Credentials(email: "networkerror@test.com", password: "Password1"), onSuccess: { _ in
+        
+        sut.login(with: LoginRepositoryType.Credentials(email: NetworkErrorCredentials.getEmail(), password: "Password1"), onSuccess: { _ in
             failureExpectation.fulfill()
         }, onError: { error in
             XCTAssertEqual(error, LoginRepositoryError.networkFailure)
             correctExpectation.fulfill()
         })
+        
         wait(for: [correctExpectation, failureExpectation], timeout: 0.1)
     }
     
@@ -63,12 +69,14 @@ final class LocalLoginRepositoryTests: XCTestCase {
         let correctExpectation = XCTestExpectation(description: "onError closure should be called")
         let failureExpectation = XCTestExpectation(description: "onSuccess closure should be called")
         failureExpectation.isInverted = true
-        sut.login(with: LoginRepositoryType.Credentials(email: "internalerror@test.com", password: "Password1"), onSuccess: { _ in
+        
+        sut.login(with: LoginRepositoryType.Credentials(email: InternalErrorCredentials.getEmail(), password: "Password1"), onSuccess: { _ in
             failureExpectation.fulfill()
         }, onError: { error in
             XCTAssertEqual(error, LoginRepositoryError.internalError)
             correctExpectation.fulfill()
         })
+        
         wait(for: [correctExpectation, failureExpectation], timeout: 0.1)
     }
     
@@ -76,12 +84,14 @@ final class LocalLoginRepositoryTests: XCTestCase {
         let correctExpectation = XCTestExpectation(description: "onError closure should be called")
         let failureExpectation = XCTestExpectation(description: "onSuccess closure should be called")
         failureExpectation.isInverted = true
-        sut.login(with: LoginRepositoryType.Credentials(email: "serverfailure@test.com", password: "Password1"), onSuccess: { _ in
+        
+        sut.login(with: LoginRepositoryType.Credentials(email: ServerFailureCredentials.getEmail(), password: "Password1"), onSuccess: { _ in
             failureExpectation.fulfill()
         }, onError: { error in
             XCTAssertEqual(error, LoginRepositoryError.serverFailure)
             correctExpectation.fulfill()
         })
+        
         wait(for: [correctExpectation, failureExpectation], timeout: 0.1)
     }
 }

@@ -6,18 +6,27 @@
 //
 
 final class LocalLoginRepository: LoginRepositoryType {
-    func login(with credentials: Credentials, onSuccess: @escaping (LoginResponse) -> (), onError: @escaping (LoginRepositoryError) -> ()) {
-        if credentials.email == "test@test.com" {
-            let loginResponse = LoginResponse(authToken: "test@test.com", expiresIn: 3600)
-            onSuccess(loginResponse)
-        } else if credentials.email == "networkerror@test.com" {
-            onError(.networkFailure)
-        } else if credentials.email == "internalerror@test.com" {
-            onError(.internalError)
-        } else if credentials.email == "serverfailure@test.com" {
-            onError(.serverFailure)
+    var directory: [String: LocalCredentials.Type]
+    init(directory: [String: LocalCredentials.Type]?) {
+        if let directory = directory {
+            self.directory = directory
         } else {
-            onError(.invalidCredentials)
+            self.directory = [:]
+            let directoryCredentials: [LocalCredentials.Type] = [TestSuccessCredentials.self, NetworkErrorCredentials.self, InternalErrorCredentials.self, ServerFailureCredentials.self, InvalidErrorCredentials.self]
+            for credentials in directoryCredentials {
+                self.directory[credentials.getEmail()] = credentials
+            }
+        }
+    }
+    
+    func login(with credentials: Credentials, onSuccess: @escaping (LoginResponse) -> (), onError: @escaping (LoginRepositoryError) -> ()) {
+        
+        if let errorCredentials = directory[credentials.email] as? LocalErrorCredentials.Type {
+            onError(errorCredentials.getError())
+        } else if let successCredentials = directory[credentials.email] as? LocalSuccessCredentials.Type {
+            let token = successCredentials.getToken()
+            let response = LoginResponse(authToken: token, expiresIn: 3600)
+            onSuccess(response)
         }
     }
 }

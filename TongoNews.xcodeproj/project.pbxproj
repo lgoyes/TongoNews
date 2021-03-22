@@ -18,6 +18,7 @@
 		0C1B545D25ED83FD00625783 /* ApplicationCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B545C25ED83FD00625783 /* ApplicationCoordinatorTests.swift */; };
 		0C1B546E25ED928A00625783 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B546D25ED928A00625783 /* AuthCoordinator.swift */; };
 		0C1B548625ED95C900625783 /* FakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B548525ED95C900625783 /* FakeViewController.swift */; };
+		0C337BCC2609182200EDFB33 /* LocalCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C337BCB2609182200EDFB33 /* LocalCredentials.swift */; };
 		0C5B15642608FF60006CB49F /* RemoteLoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5B15632608FF60006CB49F /* RemoteLoginRepository.swift */; };
 		0C5B156A26090043006CB49F /* EndpointPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5B156926090043006CB49F /* EndpointPath.swift */; };
 		0C5B1572260903FD006CB49F /* NetworkErrorDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5B1571260903FD006CB49F /* NetworkErrorDescription.swift */; };
@@ -79,6 +80,7 @@
 		0C1B545C25ED83FD00625783 /* ApplicationCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinatorTests.swift; sourceTree = "<group>"; };
 		0C1B546D25ED928A00625783 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		0C1B548525ED95C900625783 /* FakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeViewController.swift; sourceTree = "<group>"; };
+		0C337BCB2609182200EDFB33 /* LocalCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCredentials.swift; sourceTree = "<group>"; };
 		0C5B15632608FF60006CB49F /* RemoteLoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoginRepository.swift; sourceTree = "<group>"; };
 		0C5B156926090043006CB49F /* EndpointPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointPath.swift; sourceTree = "<group>"; };
 		0C5B1571260903FD006CB49F /* NetworkErrorDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorDescription.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				0C5B157B260914C5006CB49F /* JSONDecoderManager.swift */,
 				0C5B156926090043006CB49F /* EndpointPath.swift */,
 				0C5B1571260903FD006CB49F /* NetworkErrorDescription.swift */,
+				0C337BCB2609182200EDFB33 /* LocalCredentials.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				0C1B543B25ED80BD00625783 /* ApplicationCoordinator.swift in Sources */,
 				0CB193FF26025320006AA6B4 /* LoginRepositoryType.swift in Sources */,
 				0C1B53EE25ED7D3400625783 /* AppDelegate.swift in Sources */,
+				0C337BCC2609182200EDFB33 /* LocalCredentials.swift in Sources */,
 				0C1B53F825ED7D3400625783 /* TongoNews.xcdatamodeld in Sources */,
 				0C5B15642608FF60006CB49F /* RemoteLoginRepository.swift in Sources */,
 				0CDFE64225F042D800975A39 /* LoginViewController.swift in Sources */,
