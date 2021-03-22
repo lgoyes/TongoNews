@@ -8,6 +8,8 @@
 enum LoginRepositoryError: Error {
     case invalidCredentials
     case networkFailure
+    case internalError
+    case serverFailure
 }
 protocol LoginRepositoryType: AnyObject {
     typealias Credentials = (email: String, password: String)
