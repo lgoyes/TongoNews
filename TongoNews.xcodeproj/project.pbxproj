@@ -18,6 +18,8 @@
 		0C1B545D25ED83FD00625783 /* ApplicationCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B545C25ED83FD00625783 /* ApplicationCoordinatorTests.swift */; };
 		0C1B546E25ED928A00625783 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B546D25ED928A00625783 /* AuthCoordinator.swift */; };
 		0C1B548625ED95C900625783 /* FakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B548525ED95C900625783 /* FakeViewController.swift */; };
+		0C210DBF2616086E0039C68B /* LoginWithCredentialsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C210DBE2616086E0039C68B /* LoginWithCredentialsInteractorTests.swift */; };
+		0C210DC4261608970039C68B /* LoginWithCredentialsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C210DC3261608970039C68B /* LoginWithCredentialsInteractor.swift */; };
 		0C337BCC2609182200EDFB33 /* LocalCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C337BCB2609182200EDFB33 /* LocalCredentials.swift */; };
 		0C5B15642608FF60006CB49F /* RemoteLoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5B15632608FF60006CB49F /* RemoteLoginRepository.swift */; };
 		0C5B156A26090043006CB49F /* EndpointPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5B156926090043006CB49F /* EndpointPath.swift */; };
@@ -80,6 +82,8 @@
 		0C1B545C25ED83FD00625783 /* ApplicationCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinatorTests.swift; sourceTree = "<group>"; };
 		0C1B546D25ED928A00625783 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		0C1B548525ED95C900625783 /* FakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeViewController.swift; sourceTree = "<group>"; };
+		0C210DBE2616086E0039C68B /* LoginWithCredentialsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithCredentialsInteractorTests.swift; sourceTree = "<group>"; };
+		0C210DC3261608970039C68B /* LoginWithCredentialsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithCredentialsInteractor.swift; sourceTree = "<group>"; };
 		0C337BCB2609182200EDFB33 /* LocalCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCredentials.swift; sourceTree = "<group>"; };
 		0C5B15632608FF60006CB49F /* RemoteLoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoginRepository.swift; sourceTree = "<group>"; };
 		0C5B156926090043006CB49F /* EndpointPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointPath.swift; sourceTree = "<group>"; };
@@ -288,6 +292,7 @@
 			children = (
 				0CB193FE26025320006AA6B4 /* LoginRepositoryType.swift */,
 				0CB194082602551D006AA6B4 /* LoginResponse.swift */,
+				0C210DC3261608970039C68B /* LoginWithCredentialsInteractor.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -317,6 +322,7 @@
 				0CDFE63825F0428F00975A39 /* LoginViewControllerTests.swift */,
 				0CAAA18525FFBB5D001A419D /* LoginEntityTests.swift */,
 				0CB194032602533C006AA6B4 /* LocalLoginRepositoryTests.swift */,
+				0C210DBE2616086E0039C68B /* LoginWithCredentialsInteractorTests.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -494,6 +500,7 @@
 				0C94152825F054B6001C06A4 /* AnyCoordinator.swift in Sources */,
 				0CB194092602551D006AA6B4 /* LoginResponse.swift in Sources */,
 				0CAAA18B25FFBBC1001A419D /* LoginEntity.swift in Sources */,
+				0C210DC4261608970039C68B /* LoginWithCredentialsInteractor.swift in Sources */,
 				0CB193FA2602530B006AA6B4 /* LocalLoginRepository.swift in Sources */,
 				0C0AD32425F7ADA700B4ED40 /* Theme.swift in Sources */,
 				0C5B157726090520006CB49F /* APILoginResponse.swift in Sources */,
@@ -523,6 +530,7 @@
 				0C5F0A6B25EE93F100D4AC8A /* AuthCoordinatorTests.swift in Sources */,
 				0CDFE63925F0428F00975A39 /* LoginViewControllerTests.swift in Sources */,
 				0CB194042602533C006AA6B4 /* LocalLoginRepositoryTests.swift in Sources */,
+				0C210DBF2616086E0039C68B /* LoginWithCredentialsInteractorTests.swift in Sources */,
 				0C94153525F05CD7001C06A4 /* LoginViewTests.swift in Sources */,
 				0C1B545D25ED83FD00625783 /* ApplicationCoordinatorTests.swift in Sources */,
 			);
