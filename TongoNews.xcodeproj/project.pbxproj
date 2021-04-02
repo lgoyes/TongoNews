@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,7 +20,16 @@
 		0C1B548625ED95C900625783 /* FakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B548525ED95C900625783 /* FakeViewController.swift */; };
 		0C210DBF2616086E0039C68B /* LoginWithCredentialsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C210DBE2616086E0039C68B /* LoginWithCredentialsInteractorTests.swift */; };
 		0C210DC4261608970039C68B /* LoginWithCredentialsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C210DC3261608970039C68B /* LoginWithCredentialsInteractor.swift */; };
+		0C210DCC2616189F0039C68B /* SecureStorageRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C210DCB2616189F0039C68B /* SecureStorageRepositoryTests.swift */; };
+		0C210DD4261618E60039C68B /* CredentialsSecureStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C210DD3261618E60039C68B /* CredentialsSecureStorable.swift */; };
+		0C210DD9261619540039C68B /* DevSecureStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C210DD8261619540039C68B /* DevSecureStorageRepository.swift */; };
 		0C337BCC2609182200EDFB33 /* LocalCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C337BCB2609182200EDFB33 /* LocalCredentials.swift */; };
+		0C44F53A2617620700E120BC /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 0C44F5392617620700E120BC /* KeychainAccess */; };
+		0C44F5452617636100E120BC /* DevSecureStorageRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C44F5442617636100E120BC /* DevSecureStorageRepositoryTests.swift */; };
+		0C44F54A261763BE00E120BC /* SecureStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C44F549261763BE00E120BC /* SecureStorageRepository.swift */; };
+		0C44F55F26176CFF00E120BC /* SecureStorageRepositoryDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C44F55E26176CFF00E120BC /* SecureStorageRepositoryDecorator.swift */; };
+		0C44F5672617726600E120BC /* SecureStorageRepositoryDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C44F5662617726600E120BC /* SecureStorageRepositoryDecoratorTests.swift */; };
+		0C44F56F261774B200E120BC /* CredentialsSecureStorableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C44F56E261774B200E120BC /* CredentialsSecureStorableTests.swift */; };
 		0C5B15642608FF60006CB49F /* RemoteLoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5B15632608FF60006CB49F /* RemoteLoginRepository.swift */; };
 		0C5B156A26090043006CB49F /* EndpointPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5B156926090043006CB49F /* EndpointPath.swift */; };
 		0C5B1572260903FD006CB49F /* NetworkErrorDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5B1571260903FD006CB49F /* NetworkErrorDescription.swift */; };
@@ -84,7 +93,15 @@
 		0C1B548525ED95C900625783 /* FakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeViewController.swift; sourceTree = "<group>"; };
 		0C210DBE2616086E0039C68B /* LoginWithCredentialsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithCredentialsInteractorTests.swift; sourceTree = "<group>"; };
 		0C210DC3261608970039C68B /* LoginWithCredentialsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithCredentialsInteractor.swift; sourceTree = "<group>"; };
+		0C210DCB2616189F0039C68B /* SecureStorageRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageRepositoryTests.swift; sourceTree = "<group>"; };
+		0C210DD3261618E60039C68B /* CredentialsSecureStorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsSecureStorable.swift; sourceTree = "<group>"; };
+		0C210DD8261619540039C68B /* DevSecureStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevSecureStorageRepository.swift; sourceTree = "<group>"; };
 		0C337BCB2609182200EDFB33 /* LocalCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCredentials.swift; sourceTree = "<group>"; };
+		0C44F5442617636100E120BC /* DevSecureStorageRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevSecureStorageRepositoryTests.swift; sourceTree = "<group>"; };
+		0C44F549261763BE00E120BC /* SecureStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageRepository.swift; sourceTree = "<group>"; };
+		0C44F55E26176CFF00E120BC /* SecureStorageRepositoryDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageRepositoryDecorator.swift; sourceTree = "<group>"; };
+		0C44F5662617726600E120BC /* SecureStorageRepositoryDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageRepositoryDecoratorTests.swift; sourceTree = "<group>"; };
+		0C44F56E261774B200E120BC /* CredentialsSecureStorableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsSecureStorableTests.swift; sourceTree = "<group>"; };
 		0C5B15632608FF60006CB49F /* RemoteLoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoginRepository.swift; sourceTree = "<group>"; };
 		0C5B156926090043006CB49F /* EndpointPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointPath.swift; sourceTree = "<group>"; };
 		0C5B1571260903FD006CB49F /* NetworkErrorDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorDescription.swift; sourceTree = "<group>"; };
@@ -116,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C44F53A2617620700E120BC /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +213,7 @@
 		0C1B540625ED7D3500625783 /* TongoNewsTests */ = {
 			isa = PBXGroup;
 			children = (
+				0C210DCA2616185A0039C68B /* SecureStorageRepository */,
 				0CC4AB1425F908CC0051C43A /* General */,
 				0CDFE62525F041D600975A39 /* Auth */,
 				0CDFE62425F041CD00975A39 /* Application */,
@@ -237,9 +256,40 @@
 			path = Fakes;
 			sourceTree = "<group>";
 		};
+		0C210DC92616181F0039C68B /* SecureStorageRepository */ = {
+			isa = PBXGroup;
+			children = (
+				0C44F55D26176CF300E120BC /* Decorators */,
+				0C210DD8261619540039C68B /* DevSecureStorageRepository.swift */,
+				0C44F549261763BE00E120BC /* SecureStorageRepository.swift */,
+			);
+			path = SecureStorageRepository;
+			sourceTree = "<group>";
+		};
+		0C210DCA2616185A0039C68B /* SecureStorageRepository */ = {
+			isa = PBXGroup;
+			children = (
+				0C210DCB2616189F0039C68B /* SecureStorageRepositoryTests.swift */,
+				0C44F5442617636100E120BC /* DevSecureStorageRepositoryTests.swift */,
+				0C44F5662617726600E120BC /* SecureStorageRepositoryDecoratorTests.swift */,
+				0C44F56E261774B200E120BC /* CredentialsSecureStorableTests.swift */,
+			);
+			path = SecureStorageRepository;
+			sourceTree = "<group>";
+		};
+		0C44F55D26176CF300E120BC /* Decorators */ = {
+			isa = PBXGroup;
+			children = (
+				0C44F55E26176CFF00E120BC /* SecureStorageRepositoryDecorator.swift */,
+				0C210DD3261618E60039C68B /* CredentialsSecureStorable.swift */,
+			);
+			path = Decorators;
+			sourceTree = "<group>";
+		};
 		0C5B156826090030006CB49F /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				0C210DC92616181F0039C68B /* SecureStorageRepository */,
 				0C5B157B260914C5006CB49F /* JSONDecoderManager.swift */,
 				0C5B156926090043006CB49F /* EndpointPath.swift */,
 				0C5B1571260903FD006CB49F /* NetworkErrorDescription.swift */,
@@ -378,6 +428,9 @@
 			dependencies = (
 			);
 			name = TongoNews;
+			packageProductDependencies = (
+				0C44F5392617620700E120BC /* KeychainAccess */,
+			);
 			productName = TongoNews;
 			productReference = 0C1B53EA25ED7D3400625783 /* TongoNews.app */;
 			productType = "com.apple.product-type.application";
@@ -449,6 +502,9 @@
 				Base,
 			);
 			mainGroup = 0C1B53E125ED7D3400625783;
+			packageReferences = (
+				0C44F5382617620700E120BC /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			productRefGroup = 0C1B53EB25ED7D3400625783 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -493,6 +549,7 @@
 			files = (
 				0CB1940E2602593C006AA6B4 /* SystemConfig.swift in Sources */,
 				0CC4AB0B25F900A60051C43A /* ViewType.swift in Sources */,
+				0C44F54A261763BE00E120BC /* SecureStorageRepository.swift in Sources */,
 				0C922328260140600087DB18 /* RegexPattern.swift in Sources */,
 				0C5F0A8325EE9DF400D4AC8A /* UIViewController+Routable.swift in Sources */,
 				0C5F0A7B25EE9D9C00D4AC8A /* CoordinatorType.swift in Sources */,
@@ -502,6 +559,7 @@
 				0CAAA18B25FFBBC1001A419D /* LoginEntity.swift in Sources */,
 				0C210DC4261608970039C68B /* LoginWithCredentialsInteractor.swift in Sources */,
 				0CB193FA2602530B006AA6B4 /* LocalLoginRepository.swift in Sources */,
+				0C210DD4261618E60039C68B /* CredentialsSecureStorable.swift in Sources */,
 				0C0AD32425F7ADA700B4ED40 /* Theme.swift in Sources */,
 				0C5B157726090520006CB49F /* APILoginResponse.swift in Sources */,
 				0C1B546E25ED928A00625783 /* AuthCoordinator.swift in Sources */,
@@ -515,8 +573,10 @@
 				0C5B15642608FF60006CB49F /* RemoteLoginRepository.swift in Sources */,
 				0CDFE64225F042D800975A39 /* LoginViewController.swift in Sources */,
 				0C5B1572260903FD006CB49F /* NetworkErrorDescription.swift in Sources */,
+				0C44F55F26176CFF00E120BC /* SecureStorageRepositoryDecorator.swift in Sources */,
 				0C5B157C260914C5006CB49F /* JSONDecoderManager.swift in Sources */,
 				0C5B156A26090043006CB49F /* EndpointPath.swift in Sources */,
+				0C210DD9261619540039C68B /* DevSecureStorageRepository.swift in Sources */,
 				0C1B53F025ED7D3400625783 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,9 +588,13 @@
 				0C1B548625ED95C900625783 /* FakeViewController.swift in Sources */,
 				0CAAA18625FFBB5D001A419D /* LoginEntityTests.swift in Sources */,
 				0C5F0A6B25EE93F100D4AC8A /* AuthCoordinatorTests.swift in Sources */,
+				0C44F56F261774B200E120BC /* CredentialsSecureStorableTests.swift in Sources */,
+				0C210DCC2616189F0039C68B /* SecureStorageRepositoryTests.swift in Sources */,
 				0CDFE63925F0428F00975A39 /* LoginViewControllerTests.swift in Sources */,
 				0CB194042602533C006AA6B4 /* LocalLoginRepositoryTests.swift in Sources */,
+				0C44F5452617636100E120BC /* DevSecureStorageRepositoryTests.swift in Sources */,
 				0C210DBF2616086E0039C68B /* LoginWithCredentialsInteractorTests.swift in Sources */,
+				0C44F5672617726600E120BC /* SecureStorageRepositoryDecoratorTests.swift in Sources */,
 				0C94153525F05CD7001C06A4 /* LoginViewTests.swift in Sources */,
 				0C1B545D25ED83FD00625783 /* ApplicationCoordinatorTests.swift in Sources */,
 			);
@@ -850,6 +914,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0C44F5382617620700E120BC /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0C44F5392617620700E120BC /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0C44F5382617620700E120BC /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		0C1B53F625ED7D3400625783 /* TongoNews.xcdatamodeld */ = {

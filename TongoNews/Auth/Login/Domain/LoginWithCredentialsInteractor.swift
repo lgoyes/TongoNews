@@ -25,7 +25,7 @@ class LoginWithCredentialsInteractor: LoginInteractable {
     
     init(config: SystemConfig) {
         if config == .prod {
-            loginRepository = RemoteLoginRepository(jsonDecoder: JSONDecoder())
+            loginRepository = RemoteLoginRepository(jsonDecoder: JSONDecoderManager.jsonDecoder)
         } else {
             loginRepository = LocalLoginRepository(directory: nil)
         }
@@ -36,7 +36,7 @@ class LoginWithCredentialsInteractor: LoginInteractable {
     }
     
     func execute(with credentials: Credentials, onSuccess: @escaping () -> (), onError: @escaping (LoginInteractableError) -> ()) {
-        performLoginRequest(credentials: credentials) { [weak self] response in
+        performLoginRequest(credentials: credentials) { response in
             
         } onError: { (error) in
             onError(error)
