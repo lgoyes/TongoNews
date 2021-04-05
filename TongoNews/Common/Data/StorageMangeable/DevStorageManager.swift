@@ -7,16 +7,16 @@
 
 import Foundation
 
-class DevSecureStorageRepository: SecureStorageRepository {
+class DevStorageManager: StorageManageable {
     
     var entries: [String: Any] = [:]
     
     func getValue<T>(for key: String) throws -> T {
         guard let value = entries[key] else {
-            throw SecureStorageRepositoryError.keyDoesNotExist
+            throw StorageError.keyDoesNotExist
         }
         guard let castedValue = value as? T else {
-            throw SecureStorageRepositoryError.unableToConvertStoredValueToDesiredType
+            throw StorageError.unableToConvertStoredValueToDesiredType
         }
         return castedValue
     }

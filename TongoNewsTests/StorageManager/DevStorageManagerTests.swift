@@ -1,5 +1,5 @@
 //
-//  DevSecureStorageRepositoryTests.swift
+//  DevStorageManagerTests.swift
 //  TongoNewsTests
 //
 //  Created by Luis Goyes Garces on 2/04/21.
@@ -8,13 +8,13 @@
 import XCTest
 @testable import TongoNews
 
-class DevSecureStorageRepositoryTests: XCTestCase {
+class DevStorageManagerTests: XCTestCase {
     
-    private var sut: DevSecureStorageRepository!
+    private var sut: DevStorageManager!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
-        sut = DevSecureStorageRepository()
+        sut = DevStorageManager()
     }
 
     override func tearDownWithError() throws {
@@ -77,7 +77,7 @@ class DevSecureStorageRepositoryTests: XCTestCase {
         XCTAssertThrowsError(try {
             let _: String = try sut.getValue(for: key)
         }()) { (error) in
-            XCTAssertEqual(error as! SecureStorageRepositoryError, .keyDoesNotExist)
+            XCTAssertEqual(error as! StorageError, .keyDoesNotExist)
         }
     }
     
@@ -89,7 +89,7 @@ class DevSecureStorageRepositoryTests: XCTestCase {
         XCTAssertThrowsError(try {
             let _: Int = try sut.getValue(for: key)
         }()) { (error) in
-            XCTAssertEqual(error as! SecureStorageRepositoryError, .unableToConvertStoredValueToDesiredType)
+            XCTAssertEqual(error as! StorageError, .unableToConvertStoredValueToDesiredType)
         }
     }
 }
