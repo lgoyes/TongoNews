@@ -8,9 +8,9 @@
 import Foundation
 
 protocol StorageManageable {
-    func set(value: Any, for key: String)
+    func set<T: Encodable>(value: T, for key: String)
     func removeValue(for key: String)
-    func getValue<T>(for key: String) throws -> T
+    func getValue<T: Decodable>(for key: String) throws -> T
 }
 
 enum StorageError: Error {

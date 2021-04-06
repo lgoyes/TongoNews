@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C0360C3261CEC2C003F01B4 /* JSONEncoderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0360C2261CEC2C003F01B4 /* JSONEncoderManager.swift */; };
 		0C0AD32425F7ADA700B4ED40 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0AD32325F7ADA700B4ED40 /* Theme.swift */; };
 		0C1B53EE25ED7D3400625783 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B53ED25ED7D3400625783 /* AppDelegate.swift */; };
 		0C1B53F025ED7D3400625783 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B53EF25ED7D3400625783 /* SceneDelegate.swift */; };
@@ -47,7 +48,9 @@
 		0CB194042602533C006AA6B4 /* LocalLoginRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB194032602533C006AA6B4 /* LocalLoginRepositoryTests.swift */; };
 		0CB194092602551D006AA6B4 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB194082602551D006AA6B4 /* LoginResponse.swift */; };
 		0CB1940E2602593C006AA6B4 /* SystemConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB1940D2602593C006AA6B4 /* SystemConfig.swift */; };
+		0CC1B6C2261B7DF300409377 /* ProdSecureStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC1B6C1261B7DF300409377 /* ProdSecureStorageManager.swift */; };
 		0CC4AB0B25F900A60051C43A /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC4AB0A25F900A60051C43A /* ViewType.swift */; };
+		0CCFA64C261CCB87004F0DD6 /* ProdSecureStorageManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCFA64B261CCB87004F0DD6 /* ProdSecureStorageManagerTests.swift */; };
 		0CDFE63925F0428F00975A39 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDFE63825F0428F00975A39 /* LoginViewControllerTests.swift */; };
 		0CDFE64225F042D800975A39 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDFE64125F042D800975A39 /* LoginViewController.swift */; };
 		0CF15D86261B76B300D03483 /* FakeStorageManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF15D85261B76B300D03483 /* FakeStorageManageable.swift */; };
@@ -72,6 +75,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C0360C2261CEC2C003F01B4 /* JSONEncoderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONEncoderManager.swift; sourceTree = "<group>"; };
 		0C0AD32325F7ADA700B4ED40 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		0C1B53EA25ED7D3400625783 /* TongoNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TongoNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C1B53ED25ED7D3400625783 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,7 +121,9 @@
 		0CB194032602533C006AA6B4 /* LocalLoginRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLoginRepositoryTests.swift; sourceTree = "<group>"; };
 		0CB194082602551D006AA6B4 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		0CB1940D2602593C006AA6B4 /* SystemConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemConfig.swift; sourceTree = "<group>"; };
+		0CC1B6C1261B7DF300409377 /* ProdSecureStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdSecureStorageManager.swift; sourceTree = "<group>"; };
 		0CC4AB0A25F900A60051C43A /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
+		0CCFA64B261CCB87004F0DD6 /* ProdSecureStorageManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdSecureStorageManagerTests.swift; sourceTree = "<group>"; };
 		0CDFE63825F0428F00975A39 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		0CDFE64125F042D800975A39 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0CF15D85261B76B300D03483 /* FakeStorageManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeStorageManageable.swift; sourceTree = "<group>"; };
@@ -278,6 +284,7 @@
 				0C5B156926090043006CB49F /* EndpointPath.swift */,
 				0C5B1571260903FD006CB49F /* NetworkErrorDescription.swift */,
 				0C337BCB2609182200EDFB33 /* LocalCredentials.swift */,
+				0C0360C2261CEC2C003F01B4 /* JSONEncoderManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -401,6 +408,7 @@
 			children = (
 				0CF15D85261B76B300D03483 /* FakeStorageManageable.swift */,
 				0C44F5442617636100E120BC /* DevStorageManagerTests.swift */,
+				0CCFA64B261CCB87004F0DD6 /* ProdSecureStorageManagerTests.swift */,
 			);
 			path = StorageManager;
 			sourceTree = "<group>";
@@ -410,6 +418,7 @@
 			children = (
 				0C44F549261763BE00E120BC /* StorageManageable.swift */,
 				0C210DD8261619540039C68B /* DevStorageManager.swift */,
+				0CC1B6C1261B7DF300409377 /* ProdSecureStorageManager.swift */,
 			);
 			path = StorageMangeable;
 			sourceTree = "<group>";
@@ -553,9 +562,11 @@
 				0CC4AB0B25F900A60051C43A /* ViewType.swift in Sources */,
 				0C44F54A261763BE00E120BC /* StorageManageable.swift in Sources */,
 				0C922328260140600087DB18 /* RegexPattern.swift in Sources */,
+				0CC1B6C2261B7DF300409377 /* ProdSecureStorageManager.swift in Sources */,
 				0C5F0A8325EE9DF400D4AC8A /* UIViewController+Routable.swift in Sources */,
 				0C5F0A7B25EE9D9C00D4AC8A /* CoordinatorType.swift in Sources */,
 				0C5F0A9325EEA5A400D4AC8A /* CoordinatorError.swift in Sources */,
+				0C0360C3261CEC2C003F01B4 /* JSONEncoderManager.swift in Sources */,
 				0C94152825F054B6001C06A4 /* AnyCoordinator.swift in Sources */,
 				0CB194092602551D006AA6B4 /* LoginResponse.swift in Sources */,
 				0CAAA18B25FFBBC1001A419D /* LoginEntity.swift in Sources */,
@@ -595,6 +606,7 @@
 				0CB194042602533C006AA6B4 /* LocalLoginRepositoryTests.swift in Sources */,
 				0C44F5452617636100E120BC /* DevStorageManagerTests.swift in Sources */,
 				0C210DBF2616086E0039C68B /* LoginWithCredentialsInteractorTests.swift in Sources */,
+				0CCFA64C261CCB87004F0DD6 /* ProdSecureStorageManagerTests.swift in Sources */,
 				0C94153525F05CD7001C06A4 /* LoginViewTests.swift in Sources */,
 				0C1B545D25ED83FD00625783 /* ApplicationCoordinatorTests.swift in Sources */,
 			);

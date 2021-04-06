@@ -11,7 +11,7 @@ import Foundation
 class FakeStorageManageable: StorageManageable {
     var value: Any?
     
-    func set(value: Any, for key: String) {
+    func set<T>(value: T, for key: String) where T : Encodable {
         self.value = value
     }
     
@@ -19,7 +19,7 @@ class FakeStorageManageable: StorageManageable {
         value = nil
     }
     
-    func getValue<T>(for key: String) throws -> T {
+    func getValue<T: Decodable>(for key: String) throws -> T {
         guard let value = self.value else {
             throw StorageError.keyDoesNotExist
         }

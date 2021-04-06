@@ -11,7 +11,7 @@ class DevStorageManager: StorageManageable {
     
     var entries: [String: Any] = [:]
     
-    func getValue<T>(for key: String) throws -> T {
+    func getValue<T: Decodable>(for key: String) throws -> T {
         guard let value = entries[key] else {
             throw StorageError.keyDoesNotExist
         }
@@ -21,7 +21,7 @@ class DevStorageManager: StorageManageable {
         return castedValue
     }
     
-    func set(value: Any, for key: String) {
+    func set<T: Encodable>(value: T, for key: String) {
         entries[key] = value
     }
     
