@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C008F59261E130F005A7534 /* RepositoryHelperCredentialPasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C008F58261E130F005A7534 /* RepositoryHelperCredentialPasswordTests.swift */; };
+		0C008F5E261E1334005A7534 /* RepositoryHelperCredentialPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C008F5D261E1334005A7534 /* RepositoryHelperCredentialPassword.swift */; };
+		0C008F63261E140D005A7534 /* RepositoryHelperCredentialToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C008F62261E140D005A7534 /* RepositoryHelperCredentialToken.swift */; };
+		0C008F68261E144F005A7534 /* RepositoryHelperCredentialTokenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C008F67261E144F005A7534 /* RepositoryHelperCredentialTokenTests.swift */; };
 		0C0360C3261CEC2C003F01B4 /* JSONEncoderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0360C2261CEC2C003F01B4 /* JSONEncoderManager.swift */; };
+		0C08B65E261DE129002F6E15 /* RepositoryHelperCredentialEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C08B65D261DE129002F6E15 /* RepositoryHelperCredentialEmail.swift */; };
 		0C0AD32425F7ADA700B4ED40 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0AD32325F7ADA700B4ED40 /* Theme.swift */; };
 		0C1B53EE25ED7D3400625783 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B53ED25ED7D3400625783 /* AppDelegate.swift */; };
 		0C1B53F025ED7D3400625783 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B53EF25ED7D3400625783 /* SceneDelegate.swift */; };
@@ -41,6 +46,7 @@
 		0C94152825F054B6001C06A4 /* AnyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94152725F054B6001C06A4 /* AnyCoordinator.swift */; };
 		0C94153025F05C83001C06A4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94152F25F05C83001C06A4 /* LoginView.swift */; };
 		0C94153525F05CD7001C06A4 /* LoginViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94153425F05CD7001C06A4 /* LoginViewTests.swift */; };
+		0CA657D1261E117700224AAE /* RepositoryHelperCredentialEmailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA657D0261E117700224AAE /* RepositoryHelperCredentialEmailTests.swift */; };
 		0CAAA18625FFBB5D001A419D /* LoginEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAA18525FFBB5D001A419D /* LoginEntityTests.swift */; };
 		0CAAA18B25FFBBC1001A419D /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAA18A25FFBBC1001A419D /* LoginEntity.swift */; };
 		0CB193FA2602530B006AA6B4 /* LocalLoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB193F92602530B006AA6B4 /* LocalLoginRepository.swift */; };
@@ -75,7 +81,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C008F58261E130F005A7534 /* RepositoryHelperCredentialPasswordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryHelperCredentialPasswordTests.swift; sourceTree = "<group>"; };
+		0C008F5D261E1334005A7534 /* RepositoryHelperCredentialPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryHelperCredentialPassword.swift; sourceTree = "<group>"; };
+		0C008F62261E140D005A7534 /* RepositoryHelperCredentialToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryHelperCredentialToken.swift; sourceTree = "<group>"; };
+		0C008F67261E144F005A7534 /* RepositoryHelperCredentialTokenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryHelperCredentialTokenTests.swift; sourceTree = "<group>"; };
 		0C0360C2261CEC2C003F01B4 /* JSONEncoderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONEncoderManager.swift; sourceTree = "<group>"; };
+		0C08B65D261DE129002F6E15 /* RepositoryHelperCredentialEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryHelperCredentialEmail.swift; sourceTree = "<group>"; };
 		0C0AD32325F7ADA700B4ED40 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		0C1B53EA25ED7D3400625783 /* TongoNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TongoNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C1B53ED25ED7D3400625783 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +125,7 @@
 		0C94152725F054B6001C06A4 /* AnyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCoordinator.swift; sourceTree = "<group>"; };
 		0C94152F25F05C83001C06A4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0C94153425F05CD7001C06A4 /* LoginViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewTests.swift; sourceTree = "<group>"; };
+		0CA657D0261E117700224AAE /* RepositoryHelperCredentialEmailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryHelperCredentialEmailTests.swift; sourceTree = "<group>"; };
 		0CAAA18525FFBB5D001A419D /* LoginEntityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntityTests.swift; sourceTree = "<group>"; };
 		0CAAA18A25FFBBC1001A419D /* LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
 		0CB193F92602530B006AA6B4 /* LocalLoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLoginRepository.swift; sourceTree = "<group>"; };
@@ -156,6 +168,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C08B65C261DE0C5002F6E15 /* CredentialsSecureRepository */ = {
+			isa = PBXGroup;
+			children = (
+				0CF15D8A261B772900D03483 /* CredentialsSecureRepository.swift */,
+				0C08B65D261DE129002F6E15 /* RepositoryHelperCredentialEmail.swift */,
+				0C008F5D261E1334005A7534 /* RepositoryHelperCredentialPassword.swift */,
+				0C008F62261E140D005A7534 /* RepositoryHelperCredentialToken.swift */,
+			);
+			path = CredentialsSecureRepository;
+			sourceTree = "<group>";
+		};
 		0C0AD32125F7AD9100B4ED40 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,7 +285,7 @@
 		0C210DC92616181F0039C68B /* SecureStorageRepository */ = {
 			isa = PBXGroup;
 			children = (
-				0CF15D8A261B772900D03483 /* CredentialsSecureRepository.swift */,
+				0C08B65C261DE0C5002F6E15 /* CredentialsSecureRepository */,
 			);
 			path = SecureStorageRepository;
 			sourceTree = "<group>";
@@ -270,7 +293,7 @@
 		0C210DCA2616185A0039C68B /* SecureStorageRepository */ = {
 			isa = PBXGroup;
 			children = (
-				0C44F56E261774B200E120BC /* CredentialsSecureStorableTests.swift */,
+				0CA657CF261E115300224AAE /* CredentialsSecureRepository */,
 			);
 			path = SecureStorageRepository;
 			sourceTree = "<group>";
@@ -316,6 +339,17 @@
 				0C94152725F054B6001C06A4 /* AnyCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0CA657CF261E115300224AAE /* CredentialsSecureRepository */ = {
+			isa = PBXGroup;
+			children = (
+				0C44F56E261774B200E120BC /* CredentialsSecureStorableTests.swift */,
+				0CA657D0261E117700224AAE /* RepositoryHelperCredentialEmailTests.swift */,
+				0C008F58261E130F005A7534 /* RepositoryHelperCredentialPasswordTests.swift */,
+				0C008F67261E144F005A7534 /* RepositoryHelperCredentialTokenTests.swift */,
+			);
+			path = CredentialsSecureRepository;
 			sourceTree = "<group>";
 		};
 		0CB193E826025278006AA6B4 /* Presentation */ = {
@@ -567,8 +601,10 @@
 				0C5F0A7B25EE9D9C00D4AC8A /* CoordinatorType.swift in Sources */,
 				0C5F0A9325EEA5A400D4AC8A /* CoordinatorError.swift in Sources */,
 				0C0360C3261CEC2C003F01B4 /* JSONEncoderManager.swift in Sources */,
+				0C008F5E261E1334005A7534 /* RepositoryHelperCredentialPassword.swift in Sources */,
 				0C94152825F054B6001C06A4 /* AnyCoordinator.swift in Sources */,
 				0CB194092602551D006AA6B4 /* LoginResponse.swift in Sources */,
+				0C08B65E261DE129002F6E15 /* RepositoryHelperCredentialEmail.swift in Sources */,
 				0CAAA18B25FFBBC1001A419D /* LoginEntity.swift in Sources */,
 				0C210DC4261608970039C68B /* LoginWithCredentialsInteractor.swift in Sources */,
 				0CB193FA2602530B006AA6B4 /* LocalLoginRepository.swift in Sources */,
@@ -586,6 +622,7 @@
 				0C5B15642608FF60006CB49F /* RemoteLoginRepository.swift in Sources */,
 				0CDFE64225F042D800975A39 /* LoginViewController.swift in Sources */,
 				0C5B1572260903FD006CB49F /* NetworkErrorDescription.swift in Sources */,
+				0C008F63261E140D005A7534 /* RepositoryHelperCredentialToken.swift in Sources */,
 				0C5B157C260914C5006CB49F /* JSONDecoderManager.swift in Sources */,
 				0C5B156A26090043006CB49F /* EndpointPath.swift in Sources */,
 				0C210DD9261619540039C68B /* DevStorageManager.swift in Sources */,
@@ -600,6 +637,8 @@
 				0C1B548625ED95C900625783 /* FakeViewController.swift in Sources */,
 				0CAAA18625FFBB5D001A419D /* LoginEntityTests.swift in Sources */,
 				0C5F0A6B25EE93F100D4AC8A /* AuthCoordinatorTests.swift in Sources */,
+				0C008F68261E144F005A7534 /* RepositoryHelperCredentialTokenTests.swift in Sources */,
+				0CA657D1261E117700224AAE /* RepositoryHelperCredentialEmailTests.swift in Sources */,
 				0C44F56F261774B200E120BC /* CredentialsSecureStorableTests.swift in Sources */,
 				0CF15D86261B76B300D03483 /* FakeStorageManageable.swift in Sources */,
 				0CDFE63925F0428F00975A39 /* LoginViewControllerTests.swift in Sources */,
@@ -609,6 +648,7 @@
 				0CCFA64C261CCB87004F0DD6 /* ProdSecureStorageManagerTests.swift in Sources */,
 				0C94153525F05CD7001C06A4 /* LoginViewTests.swift in Sources */,
 				0C1B545D25ED83FD00625783 /* ApplicationCoordinatorTests.swift in Sources */,
+				0C008F59261E130F005A7534 /* RepositoryHelperCredentialPasswordTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
